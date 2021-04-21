@@ -2,12 +2,17 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" >
   <head>
     <!-- Added to deploy as part of crosby solutions website -->
-    <base href="https://crosby.solutions/profile/">
+    <base href="https://crosby-solutions.netlify.app/profile/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="Web Developer Portfolio for Joe Crosby.">
     <meta name="theme-color" content="#333">
     <!-- headers better served by webserve, but unavailable on github.pages -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; object-src 'self'; child-src 'self';">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' crosby.solutions crosby-solutions.netlify.app crosby.netlify.app;
+       img-src https://*;
+        object-src 'self' crosby.solutions crosby-solutions.netlify.app crosby.netlify.app;
+         child-src 'self' crosby.solutions crosby-solutions.netlify.app crosby.netlify.app;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
