@@ -1,9 +1,9 @@
 <template>
   <div
-    class="container text-white relative min-h-screen w-full align-top mx-auto text-center text-white"
+    class="container text-white relative w-full align-top mx-auto text-center text-white"
   >
     <Hex :number="3" :l="150" stroke="#064e3b" class="hex hex-top" />
-    <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" />
+    <!-- <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" /> -->
     <div class="content z-10 flex flex-col justify-between min-h-full">
       <CTA class="mt-16 z-10" />
       <div class="links-container flex flex-wrap flex-col md:flex-row">

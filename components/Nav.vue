@@ -22,7 +22,7 @@
       <nuxt-link
         v-for="menu in menuOptions"
         :key="menu"
-        :to="menu === 'Home' ? '/' : menu"
+        :to="menu === 'Home' ? '/' : menu.toLowerCase()"
         class="text-green-900 p-2 align-middle my-auto"
         >{{ menu }}</nuxt-link
       >

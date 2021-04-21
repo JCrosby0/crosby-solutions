@@ -8,11 +8,6 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
     link: [
       // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', type: 'image/x-icon', href: '/cs-favicon-80.png' },
@@ -20,6 +15,13 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Montserrat',
       },
+    ],
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' },
+      { 'http-equiv': 'X-XSS-Protection', content: '1; mode=block' },
     ],
   },
 
@@ -51,4 +53,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  // CSP configuration: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-render/
+  render: {
+    csp: true,
+    hashAlgorithm: 'sha256',
+    policies: {
+      'default-src': ['self'],
+      'img-src': ['https://*'],
+      'object-src': ['self'],
+      'child-src': ['self'],
+    },
+  },
 }

@@ -5,7 +5,7 @@
     <nuxt-link
       v-for="opt in sortedMenu"
       :key="opt"
-      :to="opt === 'Home' ? '/' : opt"
+      :to="opt === 'Home' ? '/' : opt.toLowerCase()"
       class="option pl-4 pr-4 m-0 w-full hover:bg-green-300 hover:text-gray-900"
     >
       {{ opt }}

@@ -30,7 +30,7 @@
           <p class="pt-4 text-lg">Web Apps, Support and Development</p>
         </div>
       </div>
-      <CTA />
+      <CTA class="z-10" />
     </div>
   </div>
 </template>
