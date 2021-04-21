@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" >
+  <head>
+    <!-- Added to deploy as part of crosby solutions website -->
+    <base href="https://crosby.solutions/profile/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="Web Developer Portfolio for Joe Crosby.">
+    <meta name="theme-color" content="#333">
+    <!-- headers better served by webserve, but unavailable on github.pages -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; object-src 'self'; child-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="main.css">
+    <title>Portfolio: Joe Crosby</title>
+  </head>
+  <body>
+   <main class="container">
+    <div class="page" id="page-land">
+     <a href="#contact" class="contact">contact</a>
+     <div class="text-haiku">
+       <span>Greetings! Call me Joe:</span><br>
+       <span>An </span><span class="highlight">Engineer</span><span> turned </span><span class="highlight">Web Dev</span><span>.</span><br>
+       <span class="italics">Let's solve some problems!</span>
+      </div>
+      <picture class="image-container">
+        <source srcset="img/joe-photo-cartoon-small.webp 480w, img/joe-photo-cartoon2.webp 1080w" sizes="50vw" type="image/webp">
+        <source srcset="img/joe-photo-cartoon-small.png 480w, img/joe-photo-cartoon2.png 1080w" sizes="50vw" type="image/png"> 
+        <img src="img/joe-photo-cartoon2.png" alt="Joe Crosby + Filters" height="100%" width="100%">
+      </picture>
+     </div>
+    <div class="page" id="page-about">
+      <div class="h1-container">
+        <h1>About me</h1>
+      </div>
+      <h2 class="highlight">I love solutions.</h2>
+      <p>I like data, logic, bringing order to chaos, automation. I love consuming technology to achieve this.</p>
+      <p>As a Petrophysicist, I was the focal point for data acquisition:<br>
+- communicating with interested parties<br>
+- to plan and execute operations<br>
+- to acquire necessary data to evaluate oil and gas reservoirs.<br>
+As an end-user, I used software to collate, visualise and calculate my data. I augmented that software to improve its performance, streamline data loading and automate workflows. </p>
+      <p class="highlight">I've always been building solutions.<br>Now the solutions I'm building are web applications.</p>   
+<p>I've always got an ear out for new problems; a sense for speculating why something might not be working as intended and ideas for how it could be approached differently.</p>
+<p>Have a look at some of my <span class="highlight">previously developed solutions</span> in my <a href="#portfolio">portfolio</a>.</p>
+
+    </div>
+    <div class="page" id="page-skills">
+      <div class="h1-container">
+        <h1>Skills</h1>
+      </div>
+      <p>While I'm confident to tackle any front-end problem (and working on rounding that out to full-stack), 
+how long it takes me to hole out can be likened to where a drive ends up in golf.
+(Not one of my drives, of course. They end up in the water.)</p> 
+      <object id="svg-skills" data="skills.svg" type="image/svg+xml" loading="lazy">
+        Bar chart showing Joe's skillset
+      </object>
+    </div>
+    <div class="page" id="portfolio">
+      <div class="h1-container">
+        <h1>Portfolio</h1>
+      </div>
+      <h2 class="highlight">Here are some examples of my work.</h2>
+      <div class="grid">
+<!-- Portfolio Website -->
+
+        <picture>
+          <source srcset="img/web-thumb.webp" type="image/webp">
+          <source srcset="img/web-thumb.png" type="image/png">
+          <img class="pf-img" loading="lazy" alt="This portfolio website" src="img/web-thumb.png">
+        </picture></a>
+        <div class="pf-item">
+         <span class="pf-title">Portfolio Website</span>
+         <a class="pf-link" href="https://github.com/JCrosby0/website" rel="noreferrer" target="_blank">Repository</a>
+         <a class="pf-link" href="https://jcrosby0.github.io" rel="noreferrer" target="_blank">Demo</a>
+         <ul class="pf-features">
+           <li>HTML</li>
+           <li>CSS</li>
+           <li>SVG</li>
+           <li>Grid</li>
+          </ul>
+          <p class="pf-description">
+A portfolio site for a JS developer, made without any JS! 
+This site was built entirely in a terminal window with Nano, no IDE. 
+Why? I started by wanting to build a static site without a framework, and got carried away!</p>
+        </div>
+<!-- Sudoku App -->
+        <picture>
+          <source srcset="img/sudoku.webp" type="image/webp">
+          <source srcset="img/sudoku.png" type="image/png">
+          <img class="pf-img" loading="lazy" alt="Sudoku Grid App" src="img/sudoku.png"></a>
+        </picture></a>
+        <div class="pf-item">
+          <span class="pf-title">Sudoku Web App</span>
+          <a class="pf-link" href="https://github.com/JCrosby0/sudoku-web-app" rel="noreferrer" target="_blank">Repository</a>
+          <a class="pf-link" href="https://jcrosby0.github.io/sudoku-web-app" rel="noreferrer" target="_blank">Demo</a>
+          <ul class="pf-features">
+            <li>VueJS</li>
+            <li>Cypress</li>
+            <li>Vuex</li>
+            <li>Event Listeners</li>
+         </ul>
+          <p class="pf-description">
+A fully functional Sudoku grid for solving Sudoku. 
+Complete with highlighting options and puzzle import. 
+Listeners for key input and undo stack. Full E2E test suite in Cypress. 
+Inspired by the 'Cracking the Cryptic' web-app.</p>
+        </div>
+<!-- Meal Planner -->
+        <picture>
+          <source srcset="img/meal-planner.webp" type="image/webp">
+          <source srcset="img/meal-planner.png" type="image/png">
+          <img class="pf-img" loading="lazy" alt="Meal Planner App" src="img/meal-planner.png"></a>
+        </picture></a>
+
+
+        <div class="pf-item">
+          <span class="pf-title">Meal Planner</span>
+          <a class="pf-link" href="https://github.com/JCrosby0/meal-planner" rel="noreferrer" target="_blank">Repository</a>
+          <a class="pf-link" href="https://jcrosby0.github.io/meal-planner" rel="noreferrer" target="_blank">Demo</a>
+          <ul class="pf-features">
+            <li>TypeScript</li>
+            <li>VueJS 3.0</li>
+            <li>Drag and Drop</li>
+            <li>Responsive</li>
+          </ul>
+          <p class="pf-description">
+Select Meals from a list, drag or drop them into the weekly planner, and the ingredients will be compiled and presented in a common shopping list. 
+Sorted by home layout (for checking supplied) or by supermarket layout.
+Built primarily for mobile devices (as that's what you'll have at the supermarket!)</p>
+        </div>
+<!-- SVG Grass Tree -->
+        <picture>
+          <source srcset="img/grass-tree.webp" type="image/webp">
+          <source srcset="img/grass-tree.png" type="image/png">
+            <img class="pf-img" loading="lazy" alt="Grass Tree App" src="img/grass-tree.png"></a>
+        </picture></a>
+
+
+        <div class="pf-item">
+          <span class="pf-title">SVG Grass Tree</span>
+          <a class="pf-link" href="https://github.com/JCrosby0/grass-tree" rel="noreferrer" target="_blank">Repository</a>
+          <a class="pf-link" href="https://jcrosby0.github.io/grass-tree" rel="noreferrer" target="_blank">Demo</a>
+          <ul class="pf-features">
+            <li>SVG</li>
+            <li>VueJS</li>
+          </ul>
+          <p class="pf-description">
+My children's school was looking for a grass-tree resource to use internally. I got to wondering how much of a grass-tree I could program in SVG. Reactive customisation via web-app.</p>
+        </div>
+
+
+<!-- GeoFit -->
+        <picture>
+          <source srcset="img/geofit.webp" type="image/webp">
+          <source srcset="img/geofit.jpg" type="image/jpg">
+          <img class="pf-img" loading="lazy" alt="GeoFit by Antaeus Technologies" src="img/geofit.jpg">
+        </picture></a>
+        <div class="pf-item">
+          <span class="pf-title">GeoFit</span>
+          <a class="pf-link" href="https://youtu.be/oNjjRYSzS0g?t=27" rel="noreferrer" target="_blank">Promotional Video</a>
+          <a class="pf-link" href="https://youtu.be/GY2UknU31iY?t=6" rel="noreferrer" target="_blank">Adding Data</a>
+          <a class="pf-link" href="https://youtu.be/yEqigwxBFuo?t=6" rel="noreferrer" target="_blank">User Permissions</a>
+          <ul class="pf-features">
+            <li>VueJs</li>
+            <li>D3.JS</li>
+            <li>Fully Featured Platform</li>
+          </ul>
+          <p class="pf-description">
+GeoFit is a Platform-as-a-Service Oil and Gas Data Management Suite built by Houston-based Tech Startup Antaeus Technologies. 
+<!--The platform handled data upload, QA/QC, visualisation and computation, and handled multiple users simultaneously in a high latency environment.-->
+I was reponsible for building the majority of the Front End, which was built in VueJs and D3Js, and connected via websocket to a NodeJs and PostgreSQL backend, hosted on AWS.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="page" id="contact">
+      <a href="#" class="top">top</a>
+      <div class="h1-container">
+        <h1>Contact Me</h1>
+      </div>
+      <p>Let's coffee and chat!<br>
+         Easiest if you're in Perth;<br>
+         Else: video chat!</p>
+      <h2 class="highlight">Here are some ways to stalk me:</h2>
+      <a href="https://www.jcrosby0.github.io/website" rel="noreferrer">This Portfolio</a><br>
+      <a href="https://www.github.com/jcrosby0" target="_blank" rel="noreferrer">Github</a><br>
+      <a href="https://www.linkedin.com/in/joseph-crosby-5918a79/" target="_blank" rel="noreferrer">LinkedIn</a><br>
+      <a href="mailto:josephbcrosby+websiteenquiry&#x40;gmail&#x2e;com"><span class="obfu ema">amg</span></a><br>
+      <a href="tel:+&#x36;&#x31;&#x34;&#x31;&#x32;&#x32;&#x37;&#x36;&#x37;&#x32;&#x39;"><span class="obfu pho">672<span></a>
+        <picture>
+          <source srcset="img/dogtax.webp" type="image/webp">
+          <source srcset="img/dogtax.jpg" type="image/jpg">
+          <img class="dog-tax" loading="lazy" src="img/dogtax.jpg" alt="Dog Tax: Zoe, my canine coding companion">
+        </picture>
+    </div>
+   </main>
+  </body>
+</html>

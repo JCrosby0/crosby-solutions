@@ -58,10 +58,19 @@ export default {
     csp: true,
     hashAlgorithm: 'sha256',
     policies: {
-      'default-src': ['self'],
-      'img-src': ['https://*'],
-      'object-src': ['self'],
-      'child-src': ['self'],
+      'default-src': ["'self'"],
+      'img-src': ['https:'],
+      // 'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+      // 'style-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS],
+      'script-src': ["'self'", "'unsafe-inline'", '*.google-analytics.com'],
+      // 'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
+      // 'form-action': ["'self'"],
+      // 'frame-ancestors': ["'none'"],
+      'object-src': ["'self'"],
+      // 'base-uri': [PRIMARY_HOSTS],
+      // 'report-uri': [
+      //   `https://sentry.io/api/<project>/security/?sentry_key=<key>`,
+      // ],
     },
   },
 }
