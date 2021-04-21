@@ -1,3 +1,4 @@
+const PRIMARY_HOSTS = `crosby.solutions`
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -61,7 +62,12 @@ export default {
       'default-src': ["'self'"],
       'img-src': ['https:'],
       // 'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
-      // 'style-src': ["'self'", "'unsafe-inline'", PRIMARY_HOSTS],
+      'style-src': [
+        "'self'",
+        "'unsafe-inline'",
+        PRIMARY_HOSTS,
+        'https://fonts.googleapis.com/*',
+      ],
       'script-src': ["'self'", "'unsafe-inline'", '*.google-analytics.com'],
       // 'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
       // 'form-action': ["'self'"],
