@@ -11,7 +11,9 @@
           <h2 class="text-2xl">Solutions:</h2>
           <ul>
             <li v-for="(li, i) in solutions" :key="'solution' + i">
-              {{ li.title }}
+              <nuxt-link :to="`solutions#${li.title.replace(/ /g, '')}`">{{
+                li.title
+              }}</nuxt-link>
             </li>
           </ul>
         </section>
@@ -32,7 +34,33 @@
           Created with ♡ by Crosby Solutions &copy; 2021
         </div>
         <div class="social-media">
-          Facebook | Twitter | YouTube | LinkedIn | GitHub
+          <a href="https://www.facebook.com/SolutionsCrosby/" target="_blank"
+            >Facebook</a
+          >
+          |
+          <a href="https://twitter.com/SolutionsCrosby" target="_blank"
+            >Twitter</a
+          >
+          |
+          <a
+            href="https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g"
+            target="_blank"
+            >YouTube</a
+          >
+          |
+          <a
+            href="https://www.linkedin.com/company/crosby-solutions"
+            target="_blank"
+            >LinkedIn</a
+          >
+          |
+          <a href="https://github.com/Crosby-Solutions" target="_blank"
+            >GitHub</a
+          >
+          |
+          <a href="https://www.instagram.com/solutionscrosby/" target="_blank"
+            >Instagram</a
+          >
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container relative min-h-screen w-full align-top mx-auto text-center text-white"
+    class="container relative min-h-full w-full m-auto text-center text-white"
   >
     <Hex :number="3" :l="150" stroke="#064e3b" class="hex hex-top" />
     <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" />
@@ -27,7 +27,9 @@
         </div>
         <div class="hidden md:inline-block flex-1 right-box p-4 m-auto">
           <Logo class="" :size="30" type="monochrome" />
-          <p class="pt-4 text-lg">Web Apps, Support and Development</p>
+          <p class="pt-4 text-lg">
+            Websites, Applications, Support and Development
+          </p>
         </div>
       </div>
       <CTA class="z-10" />

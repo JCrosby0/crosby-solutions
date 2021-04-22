@@ -1,4 +1,3 @@
-const PRIMARY_HOSTS = `crosby.solutions`
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -19,6 +18,7 @@ export default {
     ],
     meta: [
       { charset: 'utf-8' },
+      { 'theme-color': '#d1fae5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' },
@@ -55,34 +55,26 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   // CSP configuration: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-render/
-  render: {
-    csp: true,
-    hashAlgorithm: 'sha256',
-    policies: {
-      'default-src': ["'self'"],
-      'img-src': ['https:'],
-      // 'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
-      'style-src': [
-        "'self'",
-        "'unsafe-inline'",
-        PRIMARY_HOSTS,
-        'https://fonts.googleapis.com/*',
-      ],
-      'script-src': [
-        "'self'",
-        'crosby.solutions',
-        'crosby-solutions.netflify.app',
-        "'unsafe-inline'",
-        '*.google-analytics.com',
-      ],
-      // 'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
-      // 'form-action': ["'self'"],
-      // 'frame-ancestors': ["'none'"],
-      'object-src': ["'self'"],
-      // 'base-uri': [PRIMARY_HOSTS],
-      // 'report-uri': [
-      //   `https://sentry.io/api/<project>/security/?sentry_key=<key>`,
-      // ],
-    },
-  },
+  // render: {
+  // csp: {
+  //   addMeta: true,
+  //   // hashAlgorithm: 'sha256',
+  //   policies: {
+  //     'default-src': ["'self'"],
+  //     'img-src': ["'self'", 'https:'],
+  //     // 'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+  //     'style-src': ["'self'", "'unsafe-inline'", 'fonts.googleapis.com'],
+  //     'script-src': ["'self'", "'unsafe-inline'", '*.google-analytics.com'],
+  //     'font-src': ['fonts.gstatic.com'],
+  //     // 'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
+  //     // 'form-action': ["'self'"],
+  //     // 'frame-ancestors': ["'none'"],
+  //     'object-src': ["'self'"],
+  //     // 'base-uri': [PRIMARY_HOSTS],
+  //     // 'report-uri': [
+  //     //   `https://sentry.io/api/<project>/security/?sentry_key=<key>`,
+  //     // ],
+  //   },
+  // },
+  // },
 }

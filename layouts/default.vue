@@ -84,7 +84,7 @@ html {
 .screen {
   background: repeating-linear-gradient(
     /* -45deg, */ rgba(209, 250, 229, 1),
-    rgba(209, 250, 229, 1) 1rem,
+    #d1fae5 1rem,
     rgba(209, 250, 229, 0) 1rem,
     rgba(209, 250, 229, 0) 2rem
   );
