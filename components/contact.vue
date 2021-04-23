@@ -1,5 +1,5 @@
 <template>
-  <div class="contac">
+  <div class="contact">
     <p>Joe Crosby</p>
     <p>Crosby Solutions</p>
     <p>ABN: 5476 5210 178</p>

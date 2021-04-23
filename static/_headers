@@ -1,6 +1,7 @@
 /*
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
   cache-control: max-age: 604801
   cache-control: must-revalidate
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload

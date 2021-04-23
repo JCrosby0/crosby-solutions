@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     submit() {
-      console.log('form contents: ', this.form)
+      // console.log('form contents: ', this.form)
     },
     reset() {
       this.form.name = ''
