@@ -81,7 +81,4 @@ li:last-child::before {
   right: 10px;
   bottom: 10px;
 }
-.logo {
-  filter: drop-shadow(0 0 16px green);
-}
 </style>

@@ -36,25 +36,39 @@
       >
         <div class="social-media w-56 md:w-1/2 text-center mx-auto md:mx-0">
           <a
+            ref="noreferrer"
             href="https://www.linkedin.com/company/crosby-solutions"
             target="_blank"
             >LinkedIn</a
           >
-          <a href="https://github.com/Crosby-Solutions" target="_blank"
+          <a
+            ref="noreferrer"
+            href="https://github.com/Crosby-Solutions"
+            target="_blank"
             >GitHub</a
           >
           <a
+            ref="noreferrer"
             href="https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g"
             target="_blank"
             >YouTube</a
           >
-          <a href="https://www.facebook.com/SolutionsCrosby/" target="_blank"
+          <a
+            ref="noreferrer"
+            href="https://www.facebook.com/SolutionsCrosby/"
+            target="_blank"
             >Facebook</a
           >
-          <a href="https://twitter.com/SolutionsCrosby" target="_blank"
+          <a
+            ref="noreferrer"
+            href="https://twitter.com/SolutionsCrosby"
+            target="_blank"
             >Twitter</a
           >
-          <a href="https://www.instagram.com/solutionscrosby/" target="_blank"
+          <a
+            ref="noreferrer"
+            href="https://www.instagram.com/solutionscrosby/"
+            target="_blank"
             >Instagram</a
           >
         </div>

@@ -2,7 +2,5 @@
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
-  cache-control: max-age=605000
-  cache-control: must-revalidate
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' https:; object-src 'self'; child-src 'self'; script-src 'self' 'unsafe-inline'; font-src 'self' fonts.gstatic.com;

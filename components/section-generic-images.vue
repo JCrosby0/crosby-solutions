@@ -5,7 +5,7 @@
     <h1 class="text-3xl text-left p-4">{{ payload.title }}</h1>
     <div class="content z-10 flex flex-wrap flex-row justify-evenly">
       <div v-for="item in payload.content" :key="item.name" class="tech m-4">
-        <a :href="item.link" target="_tab">
+        <a ref="noreferrer" :href="item.link" target="_tab">
           <div class="image-container m-auto">
             <img
               :src="require(`~/assets/img/${item.img}`)"

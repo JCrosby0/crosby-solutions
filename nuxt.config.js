@@ -18,6 +18,10 @@ export default {
     ],
     meta: [
       { charset: 'utf-8' },
+      {
+        description:
+          'Website development Web Apps, Consulting, Support, Audit, Willetton, Perth, South of Perth, Western Australia',
+      },
       { 'theme-color': '#d1fae5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
