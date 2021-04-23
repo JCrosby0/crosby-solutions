@@ -7,6 +7,15 @@
       <svg :width="l + 2 * s" :height="l + 2 * s" :style="`stroke-width: ${s}`">
         <polyline :points="hexPath" :stroke="stroke" :fill="fill" />
       </svg>
+      <div
+        class="slot-container"
+        :style="`width: ${l + 2 * s}px; 
+        height: ${l / 2 + s}px; 
+        line-height: ${l / 2 + s}px; 
+        font-size: ${l / 2 + s}px;`"
+      >
+        <slot class="m-auto" />
+      </div>
     </div>
   </div>
 </template>
@@ -61,5 +70,10 @@ svg {
   stroke-linejoin: miter;
   margin: -25% 0;
   margin-right: 0;
+}
+.slot-container {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>
