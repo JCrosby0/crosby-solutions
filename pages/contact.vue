@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-page h-full p-8">
+  <div class="bg-page h-full p-4">
     <h1 class="text-3xl">Contact</h1>
-    <div class="flex flex-row flex-wrap">
+    <div class="flex flex-row flex-wrap mx-auto justify-around">
       <form id="contact" class="w-96 mr-8 mb-8">
         <h2 class="text-2xl">Contact Form</h2>
         <p class="text-sm">
@@ -47,7 +47,7 @@
           </button>
         </div>
       </form>
-      <div class="details">
+      <div class="details py-4">
         <h2 class="text-2xl">Contact Details</h2>
         <Contact />
       </div>
@@ -99,5 +99,11 @@ export default {
 .required:after {
   content: '*';
   @apply text-red-400;
+}
+#contact,
+#contact input,
+.form-row,
+#contact textarea {
+  max-width: calc(100vw - 32px);
 }
 </style>

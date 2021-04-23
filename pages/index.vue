@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-page h-full overflow-auto">
+  <div class="bg-page h-full w-full overflow-auto">
     <section class="bg-landing"><Landing class="my-auto" /></section>
     <section class="bg-transparent"><Story /></section>
     <section class="bg-transparent"><ForYou /></section>
@@ -29,7 +29,11 @@ export default {
 }
 </script>
 <style scoped>
+section {
+  @apply text-center;
+}
 .bg-landing {
+  min-height: 80%;
   background-image: linear-gradient(to right, black, #064e3b, black);
 }
 </style>

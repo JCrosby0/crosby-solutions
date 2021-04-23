@@ -27,7 +27,7 @@
     </p>
     <p>Too-hard basket. Back to social media!</p>
 
-    <h1 class="text-3xl p-4 clear-both">Hang on a second!</h1>
+    <h1 class="text-2xl p-4 clear-both text-green-700">Hang on a second!</h1>
     <p>
       Do you cut your own hair? Do you alter your own clothes? Do you service
       your own car? There's nothing stopping you from doing these things: it

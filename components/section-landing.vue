@@ -1,11 +1,9 @@
 <template>
-  <div
-    class="container relative min-h-full w-full m-auto text-center text-white"
-  >
+  <div class="container relative h-full w-full mx-auto text-center text-white">
     <Hex :number="3" :l="150" stroke="#064e3b" class="hex hex-top" />
     <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" />
-    <div class="content flex flex-col justify-evenly h-full">
-      <div class="flex flex-row">
+    <div class="content flex flex-col h-full justify-evenly align-center">
+      <div class="flex-auto flex flex-row">
         <div class="left-box p-4 text-left">
           <h1 class="p-4 text-3xl text-green-50 font-bold flex-1">
             Web Solutions to enable you,<br />
@@ -32,7 +30,7 @@
           </p>
         </div>
       </div>
-      <CTA class="z-10" />
+      <CTA class="z-10 flex-initial" />
     </div>
   </div>
 </template>
@@ -67,8 +65,9 @@ li:last-child::before {
   transform-style: preserve-3d;
   perspective: 100px;
   position: absolute;
-  opacity: 1;
+  opacity: 0.5;
   z-index: 0;
+  filter: drop-shadow(0 0 16px green);
   @apply hidden md:flex;
 }
 
@@ -78,7 +77,7 @@ li:last-child::before {
   top: 10px;
 }
 .hex-bottom {
-  transform: rotateX(30deg) translatey(-200px) rotateZ(180deg);
+  transform: rotateX(30deg) translatey(0px) rotateZ(180deg);
   right: 10px;
   bottom: 10px;
 }

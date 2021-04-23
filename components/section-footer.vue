@@ -5,8 +5,10 @@
     <Hex :number="3" :l="150" stroke="#064e3b" class="hex hex-top" />
     <!-- <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" /> -->
     <div class="content z-10 flex flex-col justify-between min-h-full">
-      <CTA class="mt-16 z-10" />
-      <div class="links-container flex flex-wrap flex-col md:flex-row">
+      <CTA class="z-10" />
+      <div
+        class="links-container flex flex-wrap flex-col md:flex-row text-sm md:text-base"
+      >
         <section class="section left">
           <h2 class="text-2xl">Solutions:</h2>
           <ul>
@@ -29,38 +31,37 @@
           <Contact />
         </section>
       </div>
-      <div class="baseline z-10 flex flex-row justify-between mt-8">
-        <div class="powered">
-          Created with ♡ by Crosby Solutions &copy; 2021
-        </div>
-        <div class="social-media">
-          <a href="https://www.facebook.com/SolutionsCrosby/" target="_blank"
-            >Facebook</a
-          >
-          |
-          <a href="https://twitter.com/SolutionsCrosby" target="_blank"
-            >Twitter</a
-          >
-          |
-          <a
-            href="https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g"
-            target="_blank"
-            >YouTube</a
-          >
-          |
+      <div
+        class="baseline z-10 flex flex-col md:flex-row justify-between text-sm"
+      >
+        <div class="social-media w-56 md:w-1/2 text-center mx-auto md:mx-0">
           <a
             href="https://www.linkedin.com/company/crosby-solutions"
             target="_blank"
             >LinkedIn</a
           >
-          |
           <a href="https://github.com/Crosby-Solutions" target="_blank"
             >GitHub</a
           >
-          |
+          <a
+            href="https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g"
+            target="_blank"
+            >YouTube</a
+          >
+          <a href="https://www.facebook.com/SolutionsCrosby/" target="_blank"
+            >Facebook</a
+          >
+          <a href="https://twitter.com/SolutionsCrosby" target="_blank"
+            >Twitter</a
+          >
           <a href="https://www.instagram.com/solutionscrosby/" target="_blank"
             >Instagram</a
           >
+        </div>
+        <div class="powered">
+          Created with 💚 by
+          <a href="https://crosby.solutions" target="_self">Crosby Solutions</a>
+          &copy; 2021
         </div>
       </div>
     </div>
@@ -91,8 +92,9 @@ export default {
   transform-style: preserve-3d;
   perspective: 100px;
   position: absolute;
-  opacity: 1;
+  opacity: 0.5;
   z-index: 1;
+  filter: drop-shadow(0 0 16px green);
   @apply hidden md:flex;
 }
 
@@ -105,5 +107,17 @@ export default {
   transform: rotateX(30deg) translatey(-200px) rotateZ(180deg);
   right: 10px;
   bottom: 10px;
+}
+.social-media a::after {
+  content: ' | ';
+}
+.social-media a:last-of-type::after {
+  content: '';
+}
+
+@media (max-width: 768px) {
+  .social-media a:nth-child(3n)::after {
+    content: '';
+  }
 }
 </style>
