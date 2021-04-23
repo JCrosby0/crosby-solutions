@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-red-500 p-4 bg-green-50">
+  <div class="border border-green-500 p-4 bg-green-50">
     <div class="header-box bg-green-100 p-4">
       <h2 class="text-2xl text-center"><slot name="title"></slot></h2>
     </div>
