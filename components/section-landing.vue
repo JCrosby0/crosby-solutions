@@ -24,7 +24,7 @@
           </p>
         </div>
         <div class="hidden md:inline-block flex-1 right-box p-4 m-auto">
-          <Logo class="" :size="30" type="monochrome" />
+          <Logo class="logo" :size="30" type="monochrome" />
           <p class="pt-4 text-lg">
             Websites, Applications, Support and Development
           </p>
@@ -80,5 +80,8 @@ li:last-child::before {
   transform: rotateX(30deg) translatey(0px) rotateZ(180deg);
   right: 10px;
   bottom: 10px;
+}
+.logo {
+  filter: drop-shadow(0 0 16px green);
 }
 </style>
