@@ -2,7 +2,7 @@
   <div class="bg-page h-full p-4">
     <h1 class="text-3xl">Contact</h1>
     <div class="flex flex-row flex-wrap mx-auto justify-around">
-      <form id="contact" class="w-96 mr-8 mb-8">
+      <form id="contact" name="contact" class="w-96 mr-8 mb-8" data-netlify>
         <h2 class="text-2xl">Contact Form</h2>
         <p class="text-sm">
           Fields indicated with <span class="text-red-400">*</span> are
