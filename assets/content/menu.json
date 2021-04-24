@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Home",
+    "to": "/",
+    "live": true
+  },
+  {
+    "name": "About",
+    "to": "about",
+    "live": true
+  },
+  {
+    "name": "Solutions",
+    "to": "solutions",
+    "live": true
+  },
+  {
+    "name": "Articles",
+    "to": "articles",
+    "live": false
+  },
+  {
+    "name": "Contact",
+    "to": "contact",
+    "live": true
+  }
+]

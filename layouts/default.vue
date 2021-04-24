@@ -24,6 +24,7 @@
 import Nav from '~/components/Nav'
 import Menu from '~/components/Menu'
 // import Footer from '~/components/Footer'
+import menuOptions from '~/assets/content/menu.json'
 export default {
   components: {
     Nav,
@@ -33,7 +34,7 @@ export default {
   data() {
     return {
       showMenu: false,
-      menuOptions: ['Home', 'About', 'Solutions', 'Contact'],
+      menuOptions: menuOptions.filter((f) => f.live),
     }
   },
   methods: {

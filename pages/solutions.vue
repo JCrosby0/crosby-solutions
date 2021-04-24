@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import solutions from '~/assets/content/solutions.json'
 import CallToAction from '~/components/callToAction'
 import Container from '~/components/container'
 export default {
@@ -27,7 +26,11 @@ export default {
     name: 'page',
     // mode: 'out-in',
   },
-  data() {
+  async asyncData({ $content }) {
+    const solutions = await $content('json')
+      .where({ slug: 'solutions' })
+
+      .fetch()
     return {
       solutions,
     }

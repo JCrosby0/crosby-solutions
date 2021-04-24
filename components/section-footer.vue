@@ -25,72 +25,44 @@
             <li>Terms & Conditions</li>
             <li>Privacy Policy</li>
           </ul>
+          <h2 class="text-2xl mt-4">Social Media</h2>
+          <ul class="social-media text-center mx-auto md:mx-0">
+            <li v-for="sm in social" :key="sm.name">
+              <a ref="noreferrer" :href="sm.href" target="_blank">{{
+                sm.name
+              }}</a>
+            </li>
+          </ul>
         </section>
         <section class="section right">
           <h2 class="text-2xl">Contact:</h2>
           <Contact />
         </section>
       </div>
-      <div
-        class="baseline z-10 flex flex-col md:flex-row justify-between text-sm"
-      >
-        <div class="social-media w-56 md:w-1/2 text-center mx-auto md:mx-0">
-          <a
-            ref="noreferrer"
-            href="https://www.linkedin.com/company/crosby-solutions"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <a
-            ref="noreferrer"
-            href="https://github.com/Crosby-Solutions"
-            target="_blank"
-            >GitHub</a
-          >
-          <a
-            ref="noreferrer"
-            href="https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g"
-            target="_blank"
-            >YouTube</a
-          >
-          <a
-            ref="noreferrer"
-            href="https://www.facebook.com/SolutionsCrosby/"
-            target="_blank"
-            >Facebook</a
-          >
-          <a
-            ref="noreferrer"
-            href="https://twitter.com/SolutionsCrosby"
-            target="_blank"
-            >Twitter</a
-          >
-          <a
-            ref="noreferrer"
-            href="https://www.instagram.com/solutionscrosby/"
-            target="_blank"
-            >Instagram</a
-          >
-        </div>
-        <div class="powered">
-          Created with 💚 by
-          <a href="https://crosby.solutions" target="_self">Crosby Solutions</a>
-          &copy; 2021
-        </div>
+      <div class="powered">
+        Created with 💚 by
+        <a href="https://crosby.solutions" target="_self">Crosby Solutions</a>
+        &copy; 2021
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import solutions from '~/assets/content/solutions.json'
 import CTA from '~/components/callToAction'
 import Hex from '~/components/hex-trio'
 import Contact from '~/components/contact'
 export default {
   components: { CTA, Hex, Contact },
-  data() {
-    return { solutions }
+  props: {
+    social: {
+      required: true,
+      type: Array,
+    },
+    solutions: {
+      required: true,
+      type: Array,
+    },
   },
 }
 </script>

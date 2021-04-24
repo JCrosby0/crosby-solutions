@@ -3,12 +3,12 @@
     class="menu-container flex flex-col pt-4 pb-4 bg-gray-900 text-white text-right ml-auto w-auto"
   >
     <nuxt-link
-      v-for="opt in sortedMenu"
+      v-for="opt in menuOptoins"
       :key="opt"
-      :to="opt === 'Home' ? '/' : opt.toLowerCase()"
+      :to="opt.to"
       class="option pl-4 pr-4 m-0 w-full hover:bg-green-300 hover:text-gray-900"
     >
-      {{ opt }}
+      {{ opt.name }}
     </nuxt-link>
   </div>
 </template>
@@ -19,22 +19,6 @@ export default {
     menuOptions: {
       required: true,
       type: Array,
-    },
-  },
-  computed: {
-    sortedMenu() {
-      const sortedMenu = this.menuOptions?.slice().sort((a, b) => {
-        return a.length < b.length
-          ? -1
-          : a.length > b.length
-          ? 1
-          : a < b
-          ? -1
-          : a > b
-          ? 1
-          : 0
-      })
-      return sortedMenu
     },
   },
 }

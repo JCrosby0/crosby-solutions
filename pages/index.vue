@@ -7,7 +7,7 @@
     <section class="bg-transparent"><Clients /></section>
     <section class="bg-transparent"><TechStack /></section>
     <section class="bg-black">
-      <Footer />
+      <Footer :social="social" :solutions="solutions" />
     </section>
   </div>
 </template>
@@ -25,6 +25,16 @@ export default {
   transiton: {
     name: 'page',
     mode: 'out-in',
+  },
+  async asyncData({ $content }) {
+    const solutions = await $content('json')
+      .where({ slug: 'solutions' })
+      .fetch()
+    const social = await $content('json').where({ slug: 'social' }).fetch()
+    return {
+      solutions,
+      social,
+    }
   },
 }
 </script>

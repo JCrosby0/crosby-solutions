@@ -6,7 +6,6 @@
       <Logo
         key="navLogo"
         type="color"
-        :menu-options="menuOptions"
         :font-size="10"
         :collapse="false"
         :animate="false"
@@ -21,10 +20,10 @@
     <div class="hidden md:inline-block links my-auto">
       <nuxt-link
         v-for="menu in menuOptions"
-        :key="menu"
-        :to="menu === 'Home' ? '/' : menu.toLowerCase()"
+        :key="menu.name"
+        :to="menu.to"
         class="text-green-900 p-2 align-middle my-auto"
-        >{{ menu }}</nuxt-link
+        >{{ menu.name }}</nuxt-link
       >
     </div>
   </div>
