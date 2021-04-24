@@ -1,0 +1,15 @@
+{
+  "title": "Clients",
+  "content": [
+    {
+      "name": "Willetton Primary School",
+      "img": "wps.png",
+      "link": "https://willettonps.wa.edu.au"
+    },
+    {
+      "name": "Willetton Baseball Club",
+      "img": "wbc.png",
+      "link": "http://www.wbcwildcats.com.au/"
+    }
+  ]
+}

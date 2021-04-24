@@ -151,12 +151,12 @@ export default {
   text-align: center;
   display: flex;
   flex-direction: column;
+  @apply text-gray-700;
 }
 /* top line */
 .loading,
 .crosby {
   font-weight: 900;
-  @apply text-green-500;
   z-index: 2;
 }
 .crosby {
@@ -170,7 +170,6 @@ export default {
   font-weight: 100;
   padding-left: 0.2em;
   letter-spacing: 0.2em;
-  @apply text-green-500;
   z-index: 1;
 }
 .solutions {

@@ -5,11 +5,12 @@
       <h2 class="text-2xl mt-4">{{ item.title }}</h2>
       <p>{{ item.para }}</p>
     </div>
+    <!-- {{ aboutItems }} -->
   </Container>
 </template>
 
 <script>
-import aboutItems from '~/assets/content/about.json'
+// import aboutItems from '~/assets/content/about.json'
 import Container from '~/components/container'
 export default {
   components: {
@@ -19,7 +20,11 @@ export default {
     name: 'page',
     // mode: 'out-in',
   },
-  data() {
+  async asyncData({ $content, params }) {
+    const aboutItems = await $content('json')
+      .where({ slug: 'about' })
+
+      .fetch()
     return {
       aboutItems,
     }

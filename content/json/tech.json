@@ -1,0 +1,60 @@
+{
+  "title": "Languages, Frameworks and Libraries",
+  "content": [
+    {
+      "name": "HTML",
+      "link": "https://html.spec.whatwg.org/",
+      "img": "html5.png"
+    },
+    {
+      "name": "CSS",
+      "link": "https://www.w3.org/Style/CSS/",
+      "img": "css3.png"
+    },
+    {
+      "name": "JS",
+      "link": "https://www.w3.org/Style/CSS/",
+      "img": "js.png"
+    },
+    {
+      "name": "Vue.Js",
+      "link": "https://www.vuejs.org",
+      "img": "vue-logo.png"
+    },
+    {
+      "name": "Nuxt.Js",
+      "link": "https://www.nuxtjs.org",
+      "img": "nuxt-emoji.png"
+    },
+    {
+      "name": "D3.js",
+      "link": "https://www.d3js.org",
+      "img": "d3.png"
+    },
+    {
+      "name": "Tailwind CSS",
+      "link": "https://www.tailwindcss.com",
+      "img": "tailwindcss.png"
+    },
+    {
+      "name": "Element UI",
+      "link": "https://element.eleme.io/",
+      "img": "element.png"
+    },
+    {
+      "name": "JQuery",
+      "link": "https://jquery.org",
+      "img": "jquery.png"
+    },
+    {
+      "name": "GraphQL",
+      "link": "https://graphql.org",
+      "img": "graphql.png"
+    },
+    {
+      "name": "Strapi",
+      "link": "https://strapi.org",
+      "img": "strapi.png"
+    }
+  ]
+}

@@ -65,9 +65,9 @@ li:last-child::before {
   transform-style: preserve-3d;
   perspective: 100px;
   position: absolute;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 0;
-  filter: drop-shadow(0 0 16px green);
+  /* filter: drop-shadow(0 0 16px green); */
   @apply hidden md:flex;
 }
 

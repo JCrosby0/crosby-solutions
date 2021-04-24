@@ -108,7 +108,7 @@ export default {
   position: absolute;
   opacity: 0.5;
   z-index: 1;
-  filter: drop-shadow(0 0 16px green);
+  /* filter: drop-shadow(0 0 16px green); */
   @apply hidden md:flex;
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="call-to-action">
-      <button class="" @click="$emit('showCTA')">Let's Talk</button>
+      <button class="" @click="$router.push('/contact')">Let's Talk</button>
     </div>
   </div>
 </template>
