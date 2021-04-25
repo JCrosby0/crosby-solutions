@@ -19,32 +19,30 @@
           >
           <input
             v-if="key.name !== 'message'"
-            v-model="form[key]"
+            v-model="form[key.name]"
             type="text"
             :name="key"
-            class="w-96 max-w-full mt-2 border border-gray-500 box-border"
+            class="w-96 max-w-full px-4 py-2 mt-2 border border-gray-500 box-border"
           />
           <textarea
             v-else
-            v-model="form[key]"
+            v-model="form[key.name]"
             :name="key"
             :rows="4"
-            class="w-96 max-w-full mt-2 border border-gray-500"
+            class="w-96 max-w-full px-4 py-2 mt-2 border border-gray-500"
           ></textarea>
         </div>
         <div class="buttons text-right w-96 max-w-full mt-2 box-border">
-          <button
+          <input
+            type="submit"
+            value="Submit"
             class="py-2 border w-24 text-center border-gray-500 rounded bg-green-400"
-            @click.prevent="submit"
-          >
-            Submit
-          </button>
-          <button
+          />
+          <input
+            type="reset"
+            value="Reset"
             class="py-2 border w-24 text-center border-gray-500 rounded bg-white"
-            @click.prevent="reset"
-          >
-            Reset
-          </button>
+          />
         </div>
       </form>
       <div class="details py-4">
@@ -79,17 +77,6 @@ export default {
       return Object.keys(this.form).map((k) => {
         return { name: k, required: this.required.includes(k) }
       })
-    },
-  },
-  methods: {
-    submit() {
-      // console.log('form contents: ', this.form)
-    },
-    reset() {
-      this.form.name = ''
-      this.form.email = ''
-      this.form.subject = ''
-      this.form.message = ''
     },
   },
 }
