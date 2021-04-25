@@ -25,7 +25,7 @@
             <li>Terms & Conditions</li>
             <li>Privacy Policy</li>
           </ul>
-          <h2 class="text-2xl mt-4">Social Media</h2>
+          <h2 class="text-2xl mt-8">Social Media:</h2>
           <ul class="social-media text-center mx-auto md:mx-0">
             <li v-for="sm in social" :key="sm.name">
               <a ref="noreferrer" :href="sm.href" target="_blank">{{

@@ -25,23 +25,15 @@
 <script>
 import Container from '~/components/container'
 export default {
+  name: 'Articles',
   components: {
     Container,
-  },
-  transition: {
-    name: 'page',
-    // mode: 'out-in',
   },
   data() {
     return {
       q: null,
       articles: [],
     }
-  },
-  mounted() {
-    this.fetch().then((_) => {
-      console.log(this.articles)
-    })
   },
   methods: {
     async fetch() {

@@ -18,9 +18,11 @@ export default {
   components: {
     Container,
   },
-  transition: {
-    name: 'page',
-    // mode: 'out-in',
+  transition(to, from) {
+    if (!from) {
+      return 'page-left'
+    }
+    return to.page < from.page ? 'page-right' : 'page-left'
   },
   async asyncData({ $content, params }) {
     const articles = await $content('articles').fetch()

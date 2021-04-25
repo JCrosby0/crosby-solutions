@@ -1,7 +1,19 @@
 [
   {
+    "title": "Domain Names",
+    "para": "Did you know that there are many more domain names than just .com, .org and .net? .solutions for example. We'll walk you through selecting and obtaining a domain name that fits your business."
+  },
+  {
+    "title": "Hosting",
+    "para": "You'll need some form of hosting, but depending whether you're hosting a static site, a WordPress site, or something more involved, the best web hosting recommendation can vary. A lot. We'll discuss with you your options and find you something that'll will fit with your growth plans and your budget."
+  },
+  {
+    "title": "Web Setup",
+    "para": "The internet keep evolving, and what was common place 10 years ago is unheard of now. Fortuately, things are getting easier if you know what to look for.Crosby Solutions will walk you through your options for setting up your web presence and make sure you're not complicating things."
+  },
+  {
     "title": "Consultation",
-    "para": "Crosby Solutions will sit with you, either in person or via video-chat, and walk through your web problems. We'll establish where you're at, where you'd like to be, and formulate a plan to get there."
+    "para": "Crosby Solutions will sit with you, either in person or via video-chat, and walk through your web plans and problems. We'll establish where you're at, where you'd like to be, and formulate a plan to get there. Talk to someone that's interested in who you are and where you're going."
   },
   {
     "title": "Website Design",
@@ -9,15 +21,15 @@
   },
   {
     "title": "Website Development",
-    "para": "It's never been easier to build a website of your own. There are plenty of online solutions to help you build your own, and plenty of web developers who will do it for you. What suits your vision and budget? Let's find the solution for you"
+    "para": "It's never been easier to build a website of your own. There are plenty of online solutions to help you build your own, and plenty of web developers who will do it for you. What suits your vision and budget? Let's find the solution for you."
+  },
+  {
+    "title": "Web Help",
+    "para": "Sometimes you're just after that person who knows what you're doing to ask questions and to bounce questions off. Drop us a line - we'd love to hear what you're thinking and maybe help out with some ideas of how to achieve it or how to stretch it further."
   },
   {
     "title": "Content Management",
-    "para": ""
-  },
-  {
-    "title": "Hosting and Deployment",
-    "para": "There's a lot of competition in website hosting these days, and lots of different solutions available. Crosby Solutions can help you find and set up the best match for your requirements. After all, you wouldn't buy a convertible to tow a caravan..."
+    "para": "If you've got a lot of dynamic content being posted to your site, we can help review your workflow and make sure you're making life easy for yourself. From formatting to sharing the burden, a working Content Management System makes life easier for you, not painful."
   },
   {
     "title": "Audits",

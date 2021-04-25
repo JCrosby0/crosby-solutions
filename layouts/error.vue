@@ -11,6 +11,11 @@ import Container from '~/components/container'
 import Logo from '~/components/Logo'
 export default {
   components: { Logo, Container },
-  props: ['error'],
+  props: {
+    error: {
+      type: Object,
+      required: true,
+    },
+  },
 }
 </script>

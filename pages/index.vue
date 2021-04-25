@@ -21,11 +21,8 @@ import TechStack from '~/components/section-tech-stack'
 import Clients from '~/components/section-clients'
 import Story from '~/components/section-story'
 export default {
+  name: 'Home',
   components: { Landing, ForYou, Features, Footer, TechStack, Clients, Story },
-  transiton: {
-    name: 'page',
-    mode: 'out-in',
-  },
   async asyncData({ $content }) {
     const solutions = await $content('json')
       .where({ slug: 'solutions' })

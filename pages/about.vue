@@ -11,12 +11,9 @@
 <script>
 import Container from '~/components/container'
 export default {
+  name: 'About',
   components: {
     Container,
-  },
-  transition: {
-    name: 'page',
-    // mode: 'out-in',
   },
   async asyncData({ $content }) {
     const aboutItems = await $content('json').where({ slug: 'about' }).fetch()
