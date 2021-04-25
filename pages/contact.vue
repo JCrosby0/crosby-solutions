@@ -4,10 +4,11 @@
     <div class="flex flex-row flex-wrap mx-auto justify-around">
       <form
         id="contact"
-        data-netlify
+        :data-netlify="true"
         name="contact"
         class="w-96 mr-8 mb-8"
         method="POST"
+        action="/success"
       >
         <h2 class="text-2xl">Contact Form</h2>
         <p class="text-sm">
@@ -48,8 +49,6 @@
             type="submit"
             :value="buttonText"
             class="p-2 border w-24 text-center border-gray-500 rounded bg-green-400"
-            :style="`{ pointer: ${inProgress ? 'disabled' : 'pointer'} }`"
-            @click.prevent="handleSubmit"
           />
           <input
             type="reset"
@@ -128,14 +127,19 @@ export default {
       // console.log('e.target.form', e.target.form)
       // console.log('form by id', document.getElementById('contact'))
       const encFormData = new FormData(document.getElementById('contact'))
-
+      console.log('encFormData: ', encFormData)
+      const formData = JSON.stringify(this.form)
+      console.log('formData: ', formData)
       // User Feedback
       this.buttonText = 'Submitting...'
       this.inProgress = true
+      console.log('formData', new URLSearchParams(formData).toString())
+      console.log('encFormData', new URLSearchParams(encFormData).toString())
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(encFormData).toString(),
+        // body: new URLSearchParams(encFormData).toString(),
+        body: new URLSearchParams(formData).toString(),
       })
         .then((response) => {
           // User Feedback
