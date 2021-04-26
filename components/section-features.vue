@@ -16,10 +16,14 @@
           </div>
           <div class="feature-opposite relative align-middle text-center">
             <Hex :l="150" stroke="#064e3b" class="hex hidden md:block">
-              {{ feature['hex-text'] }}
+              <div class="hex-contents">
+                {{ feature['hex-text'] }}
+              </div>
             </Hex>
             <Hex :l="75" stroke="#064e3b" class="hex md:hidden">
-              {{ feature['hex-text'] }}
+              <div class="hex-contents">
+                {{ feature['hex-text'] }}
+              </div>
             </Hex>
           </div>
           <div class="spacer hidden md:block"></div>
@@ -57,7 +61,11 @@ export default {
   position: absolute;
   top: 25%;
   left: 50%;
+  transition: 0.3s;
   transform: translate(-50%);
+}
+.hex:hover {
+  filter: drop-shadow(0 0 24px green);
 }
 
 .feature-opposite {

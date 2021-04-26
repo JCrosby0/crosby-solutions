@@ -4,30 +4,26 @@
     "content": [
       {
         "title": "I need a website...",
-        "list": [
-          "Starting from scratch",
-          "I want to be hands-off",
-          "How do I host it?"
-        ],
-        "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora suscipit cumque harum est cum perferendis praesentium perspiciatis aut quas error laudantium, eius porro dolorem mollitia deleniti voluptates autem repellendus. Eligendi."
+        "list": ["Starting from scratch", "Where do I start?"],
+        "content": "A clean canvas is a wonderful place to start! Let's work out how the website will fit into the bigger picture of your business and start identifying what features it will need to have. Let's review social media and your marketing strategy. Then you get to have fun picking out a domain name and thinking about branding before we pull it all together into your new web presence."
       },
       {
-        "title": "What's next?",
+        "title": "I've been volunteered!",
         "list": [
-          "Here's what I have...",
-          "I want to use it, not build it",
-          "What have I forgotten?"
+          "It's my turn to run the our website",
+          "I've never done this before",
+          "I don't want to break anything"
         ],
-        "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora suscipit cumque harum est cum perferendis praesentium perspiciatis aut quas error laudantium, eius porro dolorem mollitia deleniti voluptates autem repellendus. Eligendi."
+        "content": "Let's sit down and work our way through the site identify what needs to be done, either once off or on a regular basis, and document a strategy to ensure you're comfortable maintaining it. Alternatively, if your group is willing, you can simply outsource the site management to Crosby Solutions."
       },
       {
-        "title": "Can you ...?",
+        "title": "Time for a makeover",
         "list": [
-          "I want to add X...",
-          "How do I do Y?",
-          "What else can we do?"
+          "It needs refreshing",
+          "This part isn't working",
+          "I want it to do ___"
         ],
-        "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora suscipit cumque harum est cum perferendis praesentium perspiciatis aut quas error laudantium, eius porro dolorem mollitia deleniti voluptates autem repellendus. Eligendi."
+        "content": "Let's look through how your site is currently working for you (or how it isn't) and identify funcitonality and features that we want to improve. We'll look through performance, accessibility, responsiveness, search engine optimisation and map out what needs to be addressed. Then we'll make the decision about whether we update the current site or build a new one."
       }
     ]
   },
@@ -35,31 +31,23 @@
     "title": "Where are we going?",
     "content": [
       {
-        "title": "I need a website...",
-        "list": [
-          "Starting from scratch",
-          "I want to be hands-off",
-          "How do I host it?"
-        ],
-        "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora suscipit cumque harum est cum perferendis praesentium perspiciatis aut quas error laudantium, eius porro dolorem mollitia deleniti voluptates autem repellendus. Eligendi."
+        "title": "I need to communicate",
+        "list": ["Static Site", "Dynamic Content", "A mixture"],
+        "content": "Your website is your primary means of communication with your customers or community, and it needs to do it when you're not around! Your message may be static and unchanging, describing your business and its services. Or it may involve dynamic content to keep your community up to date with the latest news. Or some combination of both! We can help you figure out what you need to serve your specific objectives."
       },
       {
-        "title": "I need a website...",
-        "list": [
-          "Starting from scratch",
-          "I want to be hands-off",
-          "How do I host it?"
-        ],
-        "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora suscipit cumque harum est cum perferendis praesentium perspiciatis aut quas error laudantium, eius porro dolorem mollitia deleniti voluptates autem repellendus. Eligendi."
+        "title": "I need to sell",
+        "list": ["eCommerce", "Payment portal"],
+        "content": "Whether you're running an online store, looking for a way to collect annual dues, or just looking for an alternative to bank transfer payments, we can get you setup to collect payments and simplify life for you and your customers."
       },
       {
-        "title": "I need a website...",
+        "title": "I need something fancy",
         "list": [
-          "Starting from scratch",
-          "I want to be hands-off",
-          "How do I host it?"
+          "Bespoke functionality",
+          "Stand out from the crowd",
+          "Make your life easier"
         ],
-        "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora suscipit cumque harum est cum perferendis praesentium perspiciatis aut quas error laudantium, eius porro dolorem mollitia deleniti voluptates autem repellendus. Eligendi."
+        "content": "There's not much that cannot be done on a website these days. If you can dream it, we can build it (or at least help you identify what it will take, how long and how much). It could be forms to conduct surveys; data visualisation to tell a story; databases to track your team's performance or secure areas for member log-in. Above all else, these are the solutions that we love to build!"
       }
     ]
   }
