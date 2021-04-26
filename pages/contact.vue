@@ -10,6 +10,7 @@
         method="POST"
         action="/success"
       >
+        <input type="hidden" name="form-name" value="contact" class="hidden" />
         <h2 class="text-2xl">Contact Form</h2>
         <p class="text-sm">
           Fields indicated with <span class="text-red-400">*</span> are
@@ -26,16 +27,16 @@
           >
           <input
             v-if="key.name !== 'message'"
-            v-model="form[key.name]"
+            :value="form[key.name]"
             type="text"
-            :name="key"
+            :name="key.name"
             :required="key.required"
             class="w-96 max-w-full px-4 py-2 mt-2 border border-gray-500 box-border"
           />
           <textarea
             v-else
-            v-model="form[key.name]"
-            :name="key"
+            :value="form[key.name]"
+            :name="key.name"
             :rows="4"
             :required="key.required"
             class="w-96 max-w-full px-4 py-2 mt-2 border border-gray-500"
@@ -114,46 +115,42 @@ export default {
         this.form[key] = ''
       })
     },
-    handleSubmit(e) {
-      e.preventDefault()
+    //   handleSubmit(e) {
+    //     e.preventDefault()
 
-      // if missing required fields, show error
-      if (!this.form.name || !this.form.email) {
-        this.showMessage('error', 'Required fields are missing')
-        return
-      }
+    //     // if missing required fields, show error
+    //     if (!this.form.name || !this.form.email) {
+    //       this.showMessage('error', 'Required fields are missing')
+    //       return
+    //     }
 
-      // these are the same of accessing the form...
-      // console.log('e.target.form', e.target.form)
-      // console.log('form by id', document.getElementById('contact'))
-      const encFormData = new FormData(document.getElementById('contact'))
-      console.log('encFormData: ', encFormData)
-      const formData = JSON.stringify(this.form)
-      console.log('formData: ', formData)
-      // User Feedback
-      this.buttonText = 'Submitting...'
-      this.inProgress = true
-      console.log('formData', new URLSearchParams(formData).toString())
-      console.log('encFormData', new URLSearchParams(encFormData).toString())
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        // body: new URLSearchParams(encFormData).toString(),
-        body: new URLSearchParams(formData).toString(),
-      })
-        .then((response) => {
-          // User Feedback
-          this.showMessage('success', 'Successfully submitted. Thank-you!')
-          this.buttonText = 'Submit'
-          this.handleReset()
-        })
-        .catch((error) => {
-          this.showMessage('error', error.message)
-        })
-        .finally(() => {
-          this.inProgress = false
-        })
-    },
+    //     // these are the same of accessing the form...
+    //     // console.log('e.target.form', e.target.form)
+    //     // console.log('form by id', document.getElementById('contact'))
+    //     const encFormData = new FormData(document.getElementById('contact'))
+    //     const formData = JSON.stringify(this.form)
+    //     // User Feedback
+    //     this.buttonText = 'Submitting...'
+    //     this.inProgress = true
+    //     fetch('/', {
+    //       method: 'POST',
+    //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //       // body: new URLSearchParams(encFormData).toString(),
+    //       body: new URLSearchParams(formData).toString(),
+    //     })
+    //       .then((response) => {
+    //         // User Feedback
+    //         this.showMessage('success', 'Successfully submitted. Thank-you!')
+    //         this.buttonText = 'Submit'
+    //         this.handleReset()
+    //       })
+    //       .catch((error) => {
+    //         this.showMessage('error', error.message)
+    //       })
+    //       .finally(() => {
+    //         this.inProgress = false
+    //       })
+    //   },
   },
 }
 </script>
