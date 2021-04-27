@@ -15,6 +15,12 @@ export default {
       //   rel: 'stylesheet',
       //   href: 'https://fonts.googleapis.com/css?family=Montserrat',
       // },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap',
+      },
     ],
     meta: [
       { charset: 'utf-8' },

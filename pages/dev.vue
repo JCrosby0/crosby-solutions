@@ -113,7 +113,7 @@
         </g>
         <style>
           #text {
-            font-family: 'Montserrat', Sans-Serif;
+            font-family: 'Montserrat', sans-serif;
           }
 
           #crosby {
