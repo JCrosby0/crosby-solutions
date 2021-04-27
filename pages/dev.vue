@@ -117,14 +117,12 @@
           }
 
           #crosby {
-            <!-- font-weight: 600; -->
             font-size: 149px;
             border: 1px green dashed;
           }
 
           #solutions {
             font-variant: small-caps;
-            <!-- font-weight: 300; -->
             font-size: 57px;
           }
 
@@ -136,14 +134,14 @@
             animation-fill-mode: forwards;
           }
 
-          #topSFill {
+          <!-- #topSFill {
             animation-name rotate-arc;
             animation-delay: 1s;
             animation-duration: 1s;
             animation-timing-function: linear;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
-          }
+          } -->
           #topSStroke {
             animation-name rotate-arc;
             animation-delay: 1s;
