@@ -48,8 +48,13 @@ export default {
 }
 </script>
 <style scoped>
+.hex {
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
 .hex:nth-of-type(3n + 0) {
   margin-left: 25%;
   margin-right: 25%;
+  animation-direction: reverse;
 }
 </style>

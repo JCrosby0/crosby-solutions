@@ -1,35 +1,38 @@
 <template>
-  <div>
-    <div
-      class="svg-container"
-      :style="`width: ${l + 2 * s}px; height: ${l + 2 * s}px`"
+  <div
+    class="svg-container"
+    :style="`width: ${length * 0.866}px; height: ${length}px`"
+  >
+    <svg
+      :width="length * 0.866"
+      :height="length + s"
+      viewBox="-1 -1 2.1 2.1"
+      :style="`stroke-width: ${0.1}`"
     >
-      <svg :width="l + 2 * s" :height="l + 2 * s" :style="`stroke-width: ${s}`">
-        <polyline :points="hexPath" :stroke="stroke" :fill="fill" />
-      </svg>
-      <div
-        class="slot-container"
-        :style="`width: ${l + 2 * s}px; 
-        height: ${l / 2 + s}px; 
-        line-height: ${l / 2 + s}px; 
-        font-size: ${l / 2 + s}px;`"
-      >
-        <slot class="m-auto" />
-      </div>
+      <polyline :points="hexPath" :stroke="stroke" :fill="fill" />
+    </svg>
+    <div
+      class="slot-container"
+      :style="`width: ${length}px; 
+        height: ${length / 2.5}px; 
+        line-height: ${length / 2.5}px; 
+        font-size: ${length / 2.5}px;`"
+    >
+      <slot class="m-auto" />
     </div>
   </div>
 </template>
 
 <script>
 const unitPath = [
-  [0.5, 1],
-  [1, 0.75],
-  [1, 0.25],
-  [0.5, 0],
-  [0, 0.25],
-  [0, 0.75],
-  [0.5, 1],
-  [1, 0.75],
+  [-1, 0],
+  [-0.5, 0.866],
+  [0.5, 0.866],
+  [1, 0],
+  [0.5, -0.866],
+  [-0.5, -0.866],
+  [-1, 0],
+  [-0.5, 0.866],
 ]
 export default {
   props: {
@@ -54,9 +57,12 @@ export default {
     },
   },
   computed: {
+    length() {
+      return this.l + this.s
+    },
     hexPath() {
       return unitPath.reduce((acc, cur) => {
-        return acc + `${this.l * cur[0] + this.s},${this.l * cur[1] + this.s} `
+        return acc + `${cur[1]},${cur[0]} `
       }, '')
     },
   },
@@ -64,16 +70,25 @@ export default {
 </script>
 
 <style scoped>
-svg {
-  /* fill: none;
-  stroke: green; */
-  stroke-linejoin: miter;
-  margin: -25% 0;
-  margin-right: 0;
+.svg-container {
+  position: relative;
+  /* animation-name: rotate;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; */
 }
+/* @keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(1080deg) scale(1);
+  }
+} */
 .slot-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30%;
+  left: -10%;
+  margin: 0;
 }
 </style>
