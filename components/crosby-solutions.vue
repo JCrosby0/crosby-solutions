@@ -156,7 +156,7 @@ export default {
 /* top line */
 .loading,
 .crosby {
-  font-weight: 900;
+  font-weight: 600;
   z-index: 2;
 }
 .crosby {
@@ -167,7 +167,7 @@ export default {
 }
 .wait,
 .solutions {
-  font-weight: 100;
+  font-weight: 300;
   padding-left: 0.2em;
   letter-spacing: 0.2em;
   z-index: 1;
