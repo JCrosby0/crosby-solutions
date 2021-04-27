@@ -5,7 +5,7 @@
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid meet"
         :viewBox="`-110 -110 ${totalWidth} ${totalHeight}`"
-        :height="totalHeight + 'px'"
+        height="264px"
         :class="{ svgBorder: showGuidelines }"
       >
         <!-- <circle r="100" stroke="#f00" stroke-width="5px" fill="none" /> -->
@@ -19,7 +19,7 @@
           <!-- horizontal guidelines -->
           <path
             v-for="gy in [-100, -80, -40, 0, 40, 80, 100]"
-            :key="'guideline_' + gy"
+            :key="'guideline-y_' + gy"
             :d="`M -100 ${gy} L ${totalWidth} ${gy}`"
           />
           <!-- vertical guidelines -->
@@ -31,7 +31,7 @@
               x.startText,
               x.endText,
             ]"
-            :key="'guideline_' + gx"
+            :key="'guideline-x_' + gx"
             :d="`M ${gx} 100 L ${gx} -100`"
           />
         </g>
@@ -117,14 +117,14 @@
           }
 
           #crosby {
-            font-weight: 900;
-            font-size: 141px;
+            font-weight: 600;
+            font-size: 149px;
             border: 1px green dashed;
           }
 
           #solutions {
             font-variant: small-caps;
-            font-weight: 100;
+            font-weight: 300;
             font-size: 57px;
           }
 
@@ -181,10 +181,13 @@
           <li>stroke width is 0.5u</li>
           <li>'crosby' sits on the center line of the circlular logo</li>
           <li>'crosby' x-height is 2u</li>
-          <li>'crosby' font-family is Montserrat:900</li>
+          <li>'crosby' font-family is Montserrat:{{ crosbyWeight }}</li>
           <li>'solutions' sits 1u below 'crosby'</li>
           <li>'solutions' cap-height is 1u</li>
-          <li>'solutions' font-family is Montserrat:100, in capitals</li>
+          <li>
+            'solutions' font-family is Montserrat:{{ solutionsWeight }}, in
+            capitals
+          </li>
           <li>'solutions' textLength set to same as 'crosby' textLength</li>
           <li>Logo is presented with 1u padding.</li>
         </ul>
@@ -243,8 +246,8 @@ export default {
       lineCapsTop: 'round',
       lineCapsMid: 'round',
       lineCapOptions: ['butt', 'square', 'round'],
-      crosbyWeight: 900,
-      solutionsWeight: 100,
+      crosbyWeight: 600,
+      solutionsWeight: 300,
       c: {
         lineThickness: 20,
         space: 80,
