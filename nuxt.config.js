@@ -19,14 +19,14 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap',
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap',
       },
     ],
     meta: [
       { charset: 'utf-8' },
       {
         description:
-          'Website development Web Apps, Web Help, Consulting, Support, Audit, Willetton, Perth, South of Perth, Western Australia',
+          'Providng quality affordable Website development, Web Apps, Web Help, Consulting, Support, Audits, in Willetton, Perth, South of Perth, Western Australia',
       },
       { 'theme-color': '#d1fae5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -51,6 +51,8 @@ export default {
     '@nuxtjs/eslint-module',
     // nuxt.config.js
     '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -64,7 +66,7 @@ export default {
     async ready() {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).only(['slug']).fetch()
-      console.log(files)
+      console.log('files: ', files)
     },
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

@@ -1,44 +1,60 @@
 <template>
-  <div class="screen relative">
+  <div
+    :class="[$route.path === '/' ? 'screen-dark' : 'screen-light', 'relative']"
+  >
     <div class="h-screen flex flex-col overflow-hidden">
-      <nav class="flex-initial">
-        <Nav
-          :menu-options="menuOptions"
-          @toggle="handleClickNav(!showMenu)"
-          @clickNav="handleClickNav(false)"
-        />
+      <nav
+        v-show="$route.path !== '/' || showNav"
+        class="flex-initial shadow-lg"
+      >
+        <transition name="pull-down" class="shadow-lg">
+          <Nav
+            @toggle="handleClickNav(!showMenu)"
+            @clickNav="handleClickNav(false)"
+          />
+        </transition>
       </nav>
-      <main class="flex-auto overflow-auto">
+      <main class="flex-auto overflow-y-auto">
         <transition name="page-left" mode="out-in">
           <Nuxt />
         </transition>
       </main>
     </div>
-    <Menu
-      v-if="showMenu"
-      :menu-options="menuOptions"
-      class="absolute top-12 right-4"
-    />
   </div>
 </template>
 <script>
 import Nav from '~/components/Nav'
-import Menu from '~/components/Menu'
 import menuOptions from '~/assets/content/menu.json'
 export default {
   components: {
     Nav,
-    Menu,
+  },
+  provide() {
+    return {
+      menuOptions: this.menuOptions,
+      toggleMenu: this.handleClickNav,
+    }
   },
   data() {
     return {
       showMenu: false,
       menuOptions: menuOptions.filter((f) => f.live),
+      showNav: this.$route.path !== '/',
     }
   },
+  // computed: {
+  //   showNav() {
+  //     return true
+  //     // return this.$route.path !== '/'
+  //   },
+  // },
   methods: {
     handleClickNav(status = null) {
-      this.showMenu = status || false
+      if (status !== null) {
+        this.showMenu = status
+      } else {
+        this.showMenu = false
+      }
     },
   },
 }
@@ -122,23 +138,66 @@ html {
 .page-right-leave-active {
   transform: translate(100%);
 }
-
-.screen {
-  background: repeating-linear-gradient(
-    /* -45deg, */ rgba(209, 250, 229, 1),
-    #d1fae5 1rem,
-    rgba(209, 250, 229, 0) 1rem,
-    rgba(209, 250, 229, 0) 2rem
-  );
+/* nav bar transition */
+.pull-down-enter-active {
+  transition: transform 0.3s;
 }
-.bg-page {
+.pull-down-enter {
+  transform: translateY(100%);
+}
+@keyframes pull-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.screen-light {
+  /* light gradient background */
   background: linear-gradient(
     45deg,
     rgba(209, 250, 229, 0),
+    rgba(209, 250, 229, 0.5),
     rgba(209, 250, 229, 1),
-    rgba(209, 250, 229, 1),
-    rgba(236, 253, 245, 1),
+    rgba(209, 250, 229, 0.5),
     rgba(209, 250, 229, 0)
   );
+}
+
+.screen-dark {
+  /* dark background */
+  background: linear-gradient(135deg, black, black);
+  @apply bg-green-900;
+}
+/* hex background */
+.bg-page-dark {
+  background-image: linear-gradient(to right, black, #064e3b, black);
+  background: url('~assets/svg/hex-fill.svg');
+}
+/* line background */
+.bg-page {
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(209, 250, 229, 0.5) 0.3rem,
+      rgba(209, 250, 229, 0.5) 1.3rem,
+      rgba(209, 250, 229, 0) 1.3rem,
+      rgba(209, 250, 229, 0) 2.3rem
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(209, 250, 229, 0.5) 0rem,
+      rgba(209, 250, 229, 0.5) 1rem,
+      rgba(209, 250, 229, 0) 1rem,
+      rgba(209, 250, 229, 0) 2rem
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      rgba(209, 250, 229, 0.5),
+      rgba(209, 250, 229, 0.5) 1rem,
+      rgba(209, 250, 229, 0) 1rem,
+      rgba(209, 250, 229, 0) 2rem
+    );
 }
 </style>

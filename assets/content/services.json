@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Consulting",
+    "content": "We'll work with you to identify where you are, where you want to be, and plan out how to get there. This may involve further work with Crosby Solutions, with third parties, or ideally we set you up to be self-sufficient!",
+    "icon": "question_answer"
+  },
+  {
+    "title": "Auditing",
+    "content": "With an eye for efficiencies of time and cost, we'll look over your current set up, your expenses, your website, your workflows, your strategy and provide feedback on what you're doing well and what you could optimise. ",
+    "icon": "find_in_page"
+  },
+  {
+    "title": "Support",
+    "content": "Sometimes you just need an extra body to get the job done, or a fresh set of eyes to tackle a challenge. No matter the situation, Crosby Solutions will provide the support you need to get your Web Presence up and running. ",
+    "icon": "person_add"
+  },
+  {
+    "title": "Development",
+    "content": "And of course if you need a website, if you need code written, plugins configured, apps integrated, we can build that. Performant, Accessible, Responsive sites and applications to solve your problems. ",
+    "icon": "polymer"
+  }
+]

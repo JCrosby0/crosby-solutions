@@ -1,14 +1,16 @@
 <template>
   <div>
     <div
-      class="container p-4 min-h-screen w-full align-top mx-auto text-center"
+      class="container px-4 py-24 min-h-screen w-full align-top mx-auto text-center"
     >
       <div
         v-for="opt in Object.keys(options)"
         :key="'section-' + opt"
         class="options"
       >
-        <h1 class="text-3xl p-4 text-left">{{ options[opt].title }}</h1>
+        <h1 class="text-3xl p-4 text-left text-white">
+          {{ options[opt].title }}
+        </h1>
         <div class="option-container flex flex-col lg:flex-row justify-between">
           <Card
             v-for="(option, i) in options[opt].content"

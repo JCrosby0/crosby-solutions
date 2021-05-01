@@ -1,53 +1,85 @@
 <template>
-  <div class="container relative h-full w-full mx-auto text-center text-white">
-    <Hex :number="3" :l="150" stroke="#064e3b" class="hex hex-top" />
-    <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" />
-    <div class="content flex flex-col h-full justify-evenly align-center">
-      <div class="flex-auto flex flex-row">
-        <div class="left-box p-4 text-left">
-          <h1 class="p-4 text-3xl text-green-50 font-bold flex-1">
-            Web Solutions to enable you,<br />
-            not limit you.
-          </h1>
-          <ul>
-            <li>Website development</li>
-            <li>Web app development</li>
-            <li>Consultation</li>
-            <li>Audits</li>
-            <li>Development</li>
-            <li class="font-bold">Solutions</li>
-          </ul>
-          <p class="throwaway p-4">All the support you need to succeed.</p>
-          <p class="mission p-4">
-            Our mission is simple: <br />We will empower you to be in control of
-            your own web presence.
-          </p>
+  <div class="background">
+    <div
+      class="container relative h-screen w-full mx-auto text-center text-white"
+    >
+      <div
+        class="content flex flex-col h-screen justify-center md:justify-evenly align-top"
+      >
+        <div class="flex-initial flex flex-row justify-evenly">
+          <div class="left-box p-4 text-left text-sm md:text-base mx-auto">
+            <h1 class="text-3xl text-green-400 font-bold flex-1 mb-4">
+              Web Solutions to enable you,<br />
+              not limit you.
+            </h1>
+            <ul>
+              <li>Website development</li>
+              <li>Web app development</li>
+              <li>Consultation</li>
+              <li>Audits</li>
+              <li>Development</li>
+              <li class="font-bold">Solutions</li>
+            </ul>
+            <p class="throwaway py-4">All the support you need to succeed.</p>
+            <p class="mission">
+              Our mission is simple: <br />We will empower you to be in control
+              of your own web presence.
+            </p>
+          </div>
+          <div
+            id="logo-container"
+            class="hidden md:inline-block flex-initial right-box py-12 px-16 m-auto"
+          >
+            <object
+              id="cs-logo-2l"
+              class="cs-logo mx-auto lg:hidden"
+              type="image/svg+xml"
+              :data="require(`~/assets/svg/cs-toplogo-white-two-line-font.svg`)"
+              height="280px"
+            />
+            <object
+              id="cs-logo-2l"
+              class="cs-logo mx-auto hidden lg:inline-block"
+              type="image/svg+xml"
+              :data="require(`~/assets/svg/cs-logo-white-two-line-font.svg`)"
+              height="140px"
+            />
+            <!-- <component
+              :is="require('~/assets/svg/cs-logo-white-two-line.svg?inline')"
+              height="140px"
+            /> -->
+            <p class="pt-4 text-lg text-white font-semibold">
+              Websites, Applications, Support and Development
+            </p>
+          </div>
         </div>
-        <div class="hidden md:inline-block flex-1 right-box p-4 m-auto">
-          <Logo class="logo" :size="30" type="monochrome" />
-          <p class="pt-4 text-lg">
-            Websites, Applications, Support and Development
-          </p>
+        <div class="relative z-10 flex-auto md:flex-initial mt-8 mb-24">
+          <CTA />
         </div>
       </div>
-      <CTA class="z-10 flex-initial" />
     </div>
   </div>
 </template>
 
 <script>
 import CTA from '~/components/callToAction'
-import Logo from '~/components/Logo'
-import Hex from '~/components/hex-trio'
+
 export default {
-  components: { CTA, Logo, Hex },
+  components: { CTA },
 }
 </script>
 
 <style scoped>
-.left-box,
+.background {
+  background: url('~assets/svg/hex-fill.svg');
+}
+.left-box {
+  @apply z-10 my-auto;
+}
 .right-box {
-  z-index: 1;
+  width: fit-content;
+  @apply z-10;
+  backdrop-filter: blur(8px);
 }
 li {
 }
@@ -57,28 +89,5 @@ li::before {
 }
 li:last-child::before {
   content: '=';
-}
-.tri-hex * {
-  transform: translateZ(10px);
-}
-.hex {
-  transform-style: preserve-3d;
-  perspective: 100px;
-  position: absolute;
-  opacity: 1;
-  z-index: 0;
-  /* filter: drop-shadow(0 0 16px green); */
-  @apply hidden md:flex;
-}
-
-.hex-top {
-  transform: rotateX(30deg) translateY(110px);
-  left: 10px;
-  top: 10px;
-}
-.hex-bottom {
-  transform: rotateX(30deg) translatey(0px) rotateZ(180deg);
-  right: 10px;
-  bottom: 10px;
 }
 </style>

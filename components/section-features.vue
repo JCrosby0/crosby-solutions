@@ -1,32 +1,36 @@
 <template>
   <div>
     <div
-      class="container p-4 min-h-screen w-full align-top mx-auto text-center"
+      class="container px-4 focus-within:py-24 min-h-screen w-full align-top mx-auto text-center"
     >
       <h1 class="text-3xl p-4 text-left">Features:</h1>
       <div class="feature-column flex flex-col">
         <div
           v-for="(feature, i) in features"
           :key="'feature-' + i"
-          class="feature-row flex flex-row justify-start my-4"
+          class="feature-row flex flex-row justify-evenly my-4"
         >
           <div class="feature-card text-left">
             <h2 class="text-2xl pr-4">{{ feature.title }}</h2>
             <p class="pr-4">{{ feature.content }}</p>
           </div>
           <div class="feature-opposite relative align-middle text-center">
-            <Hex :l="150" stroke="#064e3b" class="hex hidden md:block">
-              <div class="hex-contents">
-                {{ feature['hex-text'] }}
-              </div>
+            <Hex :l="150" stroke="#064e3b" class="hex hidden lg:block">
+              <svg-icon
+                :name="feature.icon"
+                class="mx-auto"
+                :style="{ width: '72px', height: '72px', fill: '#064e3b' }"
+              ></svg-icon>
             </Hex>
-            <Hex :l="75" stroke="#064e3b" class="hex md:hidden">
-              <div class="hex-contents">
-                {{ feature['hex-text'] }}
-              </div>
+            <Hex :l="75" stroke="#064e3b" class="hex lg:hidden">
+              <svg-icon
+                :name="feature.icon"
+                class="mx-auto"
+                :style="{ width: '36px', height: '36px', fill: '#064e3b' }"
+              ></svg-icon>
             </Hex>
           </div>
-          <div class="spacer hidden md:block"></div>
+          <div class="spacer hidden lg:block"></div>
         </div>
       </div>
     </div>
@@ -35,8 +39,10 @@
 
 <script>
 import features from '~/assets/content/features.json'
+import svgIcon from '~/components/svg-icon.vue'
 import Hex from '~/components/hex'
 export default {
+  components: { svgIcon },
   data() {
     return {
       features,
@@ -59,10 +65,10 @@ export default {
 }
 .hex {
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 50%;
   transition: 0.3s;
-  transform: translate(-50%);
+  /* transform: translate(-50%); */
 }
 .hex:hover {
   filter: drop-shadow(0 0 24px green);
@@ -80,7 +86,7 @@ export default {
   flex: 1 5 33%;
 }
 /* aka tailwindcss md: */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .feature-row {
     min-height: 170px;
   }

@@ -78,13 +78,12 @@ export default {
 <style scoped>
 /* container for the letters logo and words logo */
 .logo {
-  margin: auto;
   /* height: 4em; */
   /* margin: 2em; */
   display: flex;
   flex-flow: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   position: relative;
   @apply bg-transparent;
 }
@@ -98,7 +97,7 @@ export default {
 }
 .stroke {
   position: absolute;
-  left: calc(2em - 0.2em);
+  left: calc(2em - 0.55em);
   height: calc(2em);
   width: 0.4em;
   transform-origin: 0.2em 2em;

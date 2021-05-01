@@ -361,7 +361,6 @@
           }
 
           #solutionsOL {
-            font-variant: small-caps;
             font-size: 160px;
           }
 
@@ -412,11 +411,31 @@
         </style>
       </svg>
     </div>
+    <div class="complete-svgs w-full m-20">
+      <object
+        type="image/svg+xml"
+        :data="require('~/assets/svg/cs-logo.svg')"
+        height="200px"
+      ></object>
+      <object
+        id="cs-logo-1l"
+        class="cs-logo"
+        type="image/svg+xml"
+        :data="require('~/assets/svg/cs-logo-one-line.svg')"
+        height="100px"
+      />
+      <object
+        id="cs-logo-2l"
+        class="cs-logo"
+        type="image/svg+xml"
+        :data="require(`~/assets/svg/cs-logo-two-line.svg`)"
+        height="200px"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-// import Logo from '~/components/LogoDevelop'
 export default {
   // components: { Logo },
   data() {
@@ -487,12 +506,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 svg {
   padding: 20px;
   box-sizing: border-box;
   border: 1px transparent;
+}
+.complete-svgs > object {
+  margin-top: 50px;
 }
 .svgBorder {
   border: green 1px dashed;
