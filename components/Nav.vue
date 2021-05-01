@@ -46,7 +46,11 @@ export default {
   },
   computed: {
     localShowMenu() {
-      return this.$root.$children[2].showMenu
+      return (
+        this.$root &&
+        this.$root.$children[2] &&
+        this.$root?.$children[2]?.showMenu
+      )
     },
   },
   methods: {
