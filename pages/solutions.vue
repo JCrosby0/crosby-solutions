@@ -10,7 +10,9 @@
     <p class="pt-8 text-lg text-center">
       Interested in something not listed here? We'd love to hear from you!
     </p>
-    <CallToAction class="text-center" />
+    <div class="relative w-full text-center mt-16 py-8">
+      <CallToAction class="mx-auto" />
+    </div>
   </Container>
 </template>
 

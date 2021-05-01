@@ -28,7 +28,8 @@
       >
     </div>
     <Menu
-      v-show="localShowMenu"
+      v-show="showMenu"
+      :menu-options="menuOptions"
       :class="[showMenuAbove ? 'menu-above' : 'menu-below']"
     ></Menu>
   </div>
@@ -38,25 +39,27 @@
 import Menu from '~/components/Menu'
 export default {
   components: { Menu },
-  inject: ['toggleMenu', 'menuOptions'],
+  props: {
+    showMenu: {
+      required: true,
+      type: Boolean,
+    },
+    menuOptions: {
+      required: false,
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       showMenuAbove: true,
     }
   },
-  computed: {
-    localShowMenu() {
-      // this.$root &&
-      // this.$root.$children[2] &&
-      return this.$root?.$children[2]?.showMenu
-    },
-  },
   methods: {
     handleMenuClick(e) {
       const topHalf = e.y < document.body.scrollHeight / 2
       this.showMenuAbove = !topHalf
-      // toggle menu in root component
-      this.toggleMenu(!this.localShowMenu)
+      this.$emit('toggle')
     },
   },
 }
@@ -65,38 +68,36 @@ export default {
 .menu-above,
 .menu-below {
   position: absolute;
-  right: 2rem;
-  z-index: 20;
+  right: 0;
+  z-index: 10;
 }
 .menu-above {
   bottom: 64px;
-  animation: 0.3s pull-down;
+  transform-origin: bottom right;
+  animation: 0.3s spin-left;
 }
 .menu-below {
   top: 64px;
-  animation: 0.3s pull-up;
+  transform-origin: top right;
+  animation: 0.3s spin-right;
 }
-@keyframes pull-down {
+@keyframes spin-left {
   0% {
-    transform: translateY(100%);
-    z-index: -1;
+    transform: rotate(90deg);
     opacity: 0;
   }
   100% {
-    transform: translateY(0%);
-    z-index: 20;
+    transform: rotate(0deg);
     opacity: 1;
   }
 }
-@keyframes pull-up {
+@keyframes spin-right {
   0% {
-    transform: translateY(-100%);
-    z-index: -1;
+    transform: rotate(-90deg);
     opacity: 0;
   }
   100% {
-    transform: translateY(0%);
-    z-index: 20;
+    transform: rotate(0deg);
     opacity: 1;
   }
 }

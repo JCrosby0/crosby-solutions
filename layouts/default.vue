@@ -1,20 +1,23 @@
 <template>
-  <div
-    :class="[$route.path === '/' ? 'screen-dark' : 'screen-light', 'relative']"
-  >
-    <div class="h-screen flex flex-col overflow-hidden">
-      <nav
-        v-show="$route.path !== '/' || showNav"
-        class="flex-initial shadow-lg"
-      >
-        <transition name="pull-down" class="shadow-lg">
-          <Nav
-            @toggle="handleClickNav(!showMenu)"
-            @clickNav="handleClickNav(false)"
-          />
-        </transition>
+  <div :class="screenClass">
+    <div
+      class="h-screen flex flex-col overflow-y-auto relative"
+      @scroll="handleScrollEvent"
+    >
+      <section v-if="$route.path === '/'">
+        <Landing class="flex-initial -mb-66" />
+      </section>
+      <nav class="sticky z-20">
+        <Nav
+          ref="nav"
+          class="nav shadow-lg"
+          :show-menu="showMenu"
+          :menu-options="menuOptions"
+          @toggle="handleClickNav(!showMenu)"
+          @clickNav="handleClickNav(false)"
+        />
       </nav>
-      <main class="flex-auto overflow-y-auto">
+      <main class="flex-auto">
         <transition name="page-left" mode="out-in">
           <Nuxt />
         </transition>
@@ -25,30 +28,61 @@
 <script>
 import Nav from '~/components/Nav'
 import menuOptions from '~/assets/content/menu.json'
+import Landing from '~/components/section-landing'
 export default {
   components: {
     Nav,
-  },
-  provide() {
-    return {
-      menuOptions: this.menuOptions,
-      toggleMenu: this.handleClickNav,
-    }
+    Landing,
   },
   data() {
     return {
       showMenu: false,
       menuOptions: menuOptions.filter((f) => f.live),
-      showNav: this.$route.path !== '/',
     }
   },
-  // computed: {
-  //   showNav() {
-  //     return true
-  //     // return this.$route.path !== '/'
-  //   },
-  // },
+  computed: {
+    screenClass() {
+      return {
+        'screen-dark': this.$route.path === '/',
+        'screen-light': this.$route.path !== '/',
+        relative: true,
+      }
+    },
+  },
+  mounted() {
+    this.offset = this.$refs.nav.$el.offsetTop
+    console.log('this.offset: ', this.offset)
+  },
   methods: {
+    toggleSticky(status) {
+      // console.log('toggle sticky: status: ', status)
+      // if (status) {
+      //   this.$refs.nav.$el.classList.add('sticky')
+      //   // do we need to remove the mt-66??
+      // } else {
+      //   this.$refs.nav.$el.classList.remove('sticky')
+      // }
+    },
+    // fires on every scroll event
+    // if
+    handleScrollEvent(e) {
+      this.handleClickNav(false)
+      // console.log('scrollEvent', e)
+      // console.log('e.target.scrollTop: ', e.target.scrollTop)
+      // console.log(
+      //   'this.$refs.nav.$el.offsetTop: ',
+      //   this.$refs.nav.$el.offsetTop
+      // )
+      this.$nextTick(() => {
+        // if the navbar is at the top, make it sticky
+        this.toggleSticky(e.target.scrollTop > this.offset)
+        // console.log(
+        //   'e.target.scrollTop > this.offset: ',
+        //   e.target.scrollTop > this.offset
+        // )
+        // hide menu if its open
+      })
+    },
     handleClickNav(status = null) {
       if (status !== null) {
         this.showMenu = status
@@ -108,6 +142,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
   @apply bg-green-50;
 }
 
@@ -199,5 +234,16 @@ html {
       rgba(209, 250, 229, 0) 1rem,
       rgba(209, 250, 229, 0) 2rem
     );
+}
+/* Sticky Nav Bar */
+.-mb-66 {
+  margin-bottom: -64px;
+}
+.nav {
+  @apply z-20;
+}
+.sticky {
+  position: sticky;
+  top: 0;
 }
 </style>

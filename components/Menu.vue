@@ -15,7 +15,13 @@
 
 <script>
 export default {
-  inject: ['menuOptions'],
+  props: {
+    menuOptions: {
+      required: false,
+      type: Array,
+      default: () => [],
+    },
+  },
 }
 </script>
 
