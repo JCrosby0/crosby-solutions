@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="container px-4 focus-within:py-24 min-h-screen w-full align-top mx-auto text-center"
+      class="container px-4 py-24 min-h-screen w-full align-top mx-auto text-center"
     >
       <h1 class="text-3xl p-4 text-left">Features:</h1>
       <div class="feature-column flex flex-col">

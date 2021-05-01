@@ -46,11 +46,9 @@ export default {
   },
   computed: {
     localShowMenu() {
-      return (
-        this.$root &&
-        this.$root.$children[2] &&
-        this.$root?.$children[2]?.showMenu
-      )
+      // this.$root &&
+      // this.$root.$children[2] &&
+      return this.$root?.$children[2]?.showMenu
     },
   },
   methods: {
