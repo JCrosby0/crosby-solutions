@@ -53,8 +53,17 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
+    // https://google-analytics.nuxtjs.org/setup
+    '@nuxtjs/google-analytics',
   ],
-
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID,
+    },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
