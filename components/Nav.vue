@@ -2,7 +2,7 @@
   <div
     class="nav-back relative z-50 flex flex-row justify-between p-4 bg-green-200 border-b border-t border-gray-900 shadow-lg"
   >
-    <nuxt-link to="/" class="logo">
+    <nuxt-link to="/" class="logo relative">
       <object
         id="cs-logo-1l"
         class="cs-logo"
@@ -10,6 +10,7 @@
         :data="require('~/assets/svg/cs-logo-one-line.svg')"
         height="30px"
       />
+      <div class="click-mask absolute w-full h-full top-0 left-0"></div>
     </nuxt-link>
     <button
       ref="menuButton"
@@ -103,6 +104,12 @@ export default {
 }
 .logo {
   text-decoration: none !important;
+}
+.cs-logo:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer: cursor;
 }
 .nav-back {
   background-image: linear-gradient(
