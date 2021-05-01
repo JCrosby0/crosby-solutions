@@ -51,37 +51,10 @@ export default {
   },
   mounted() {
     this.offset = this.$refs.nav.$el.offsetTop
-    console.log('this.offset: ', this.offset)
   },
   methods: {
-    toggleSticky(status) {
-      // console.log('toggle sticky: status: ', status)
-      // if (status) {
-      //   this.$refs.nav.$el.classList.add('sticky')
-      //   // do we need to remove the mt-66??
-      // } else {
-      //   this.$refs.nav.$el.classList.remove('sticky')
-      // }
-    },
-    // fires on every scroll event
-    // if
     handleScrollEvent(e) {
       this.handleClickNav(false)
-      // console.log('scrollEvent', e)
-      // console.log('e.target.scrollTop: ', e.target.scrollTop)
-      // console.log(
-      //   'this.$refs.nav.$el.offsetTop: ',
-      //   this.$refs.nav.$el.offsetTop
-      // )
-      this.$nextTick(() => {
-        // if the navbar is at the top, make it sticky
-        this.toggleSticky(e.target.scrollTop > this.offset)
-        // console.log(
-        //   'e.target.scrollTop > this.offset: ',
-        //   e.target.scrollTop > this.offset
-        // )
-        // hide menu if its open
-      })
     },
     handleClickNav(status = null) {
       if (status !== null) {
