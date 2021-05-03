@@ -3,8 +3,6 @@
     <div
       class="container px-4 pt-24 text-white relative w-full align-top mx-auto text-center"
     >
-      <!-- <Hex :number="3" :l="150" stroke="#064e3b" class="hex hex-top" /> -->
-      <!-- <Hex :number="6" :l="150" stroke="#064e3b" class="hex hex-bottom" /> -->
       <div class="content z-10 flex flex-col justify-between min-h-full">
         <div
           class="links-container md:pt-24 flex flex-wrap flex-col md:flex-row text-sm md:text-base"
@@ -23,8 +21,11 @@
           <section class="section mid">
             <h2 class="text-2xl">About:</h2>
             <ul>
-              <li>Terms & Conditions</li>
-              <li>Privacy Policy</li>
+              <li>
+                <nuxt-link to="terms-conditions">Terms & Conditions</nuxt-link>
+              </li>
+              <li><nuxt-link to="privacy-policy">Privacy Policy</nuxt-link></li>
+              <li><nuxt-link to="cookies-policy">Cookies Policy</nuxt-link></li>
             </ul>
             <h2 class="text-2xl mt-8">Social Media:</h2>
             <ul class="social-media text-center mx-auto md:mx-0">
