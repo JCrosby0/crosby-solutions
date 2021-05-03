@@ -2,7 +2,7 @@
   <div class="bg-page h-full p-4">
     <h1 class="text-3xl">Contact</h1>
     <p class="py-4">
-      Not sure you're ready to get started? That's exactly what I'm here for!
+      Not sure you're ready to get started? That's exactly what we're here for!
       Let me know what's on your mind and let's line up a chat. No mailing
       lists, no obligation.
     </p>
