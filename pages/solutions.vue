@@ -1,39 +1,26 @@
 <template>
   <Container>
-    <h1 class="text-3xl">Solutions</h1>
-    <div v-for="item in solutionsJSON" :key="item.title" class="solutions">
-      <h2 :id="item.title.replace(/ /g, '')" class="text-2xl mt-4">
-        {{ item.title }}
-      </h2>
-      <p>{{ item.para }}</p>
-    </div>
-    <p class="pt-8 text-lg text-center">
-      Interested in something not listed here? We'd love to hear from you!
-    </p>
-    <div class="relative w-full text-center mt-16 py-8">
-      <CallToAction class="mx-auto" />
-    </div>
+    <h1 class="text-3xl pb-4">Solutions</h1>
+    <Accordion :content="solutions" />
   </Container>
 </template>
 
 <script>
-import CallToAction from '~/components/callToAction'
 import Container from '~/components/container'
+import Accordion from '~/components/accordion'
 export default {
   name: 'Solutions',
   components: {
-    CallToAction,
     Container,
+    Accordion,
   },
   async asyncData({ $content }) {
-    const solutionsJSON = await $content('json')
+    const solutions = await $content('json')
       .where({ slug: 'solutions' })
       .fetch()
     return {
-      solutionsJSON,
+      solutions,
     }
   },
 }
 </script>
-
-<style></style>

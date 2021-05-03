@@ -13,9 +13,10 @@
             <h2 class="text-2xl">Solutions:</h2>
             <ul>
               <li v-for="(li, i) in solutions" :key="'solution' + i">
-                <nuxt-link :to="`solutions#${li.title.replace(/ /g, '')}`">{{
-                  li.title
-                }}</nuxt-link>
+                <nuxt-link
+                  :to="{ path: 'solutions', hash: li.title.replace(/ /g, '') }"
+                  >{{ li.title }}</nuxt-link
+                >
               </li>
             </ul>
           </section>

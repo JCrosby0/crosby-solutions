@@ -1,7 +1,7 @@
 <template>
   <div :class="screenClass">
     <div
-      class="h-screen flex flex-col overflow-y-auto relative"
+      class="scrollable h-screen flex flex-col overflow-y-auto relative"
       @scroll="handleScrollEvent"
     >
       <section v-if="$route.path === '/'">
@@ -218,5 +218,9 @@ html {
 .sticky {
   position: sticky;
   top: 0;
+}
+/* allow for nav bar in scrollable area */
+.scrollable {
+  scroll-padding-top: 100px;
 }
 </style>

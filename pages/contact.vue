@@ -1,12 +1,17 @@
 <template>
   <div class="bg-page h-full p-4">
     <h1 class="text-3xl">Contact</h1>
+    <p class="py-4">
+      Not sure you're ready to get started? That's exactly what I'm here for!
+      Let me know what's on your mind and let's line up a chat. No mailing
+      lists, no obligation.
+    </p>
     <div class="flex flex-row flex-wrap mx-auto justify-around">
       <form
         id="contact"
         :data-netlify="true"
         name="contact"
-        class="w-96 mr-8 mb-8"
+        class="w-96 mx-auto py-8"
         method="POST"
         action="/success"
       >
@@ -59,7 +64,7 @@
           />
         </div>
       </form>
-      <div class="details py-4">
+      <div class="details py-8 mx-auto">
         <h2 class="text-2xl">Contact Details</h2>
         <ContactInfo />
       </div>
