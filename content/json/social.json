@@ -3,25 +3,46 @@
     "href": "https://www.linkedin.com/company/crosby-solutions",
     "name": "LinkedIn",
     "avatar": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-16x16.svg",
+        "x": 16,
+        "y": 16
+      },
+      "background": "",
       "src": "linkedin-avatar-300x300.png",
-      "dimensions": "300 x 300 px",
-      "displays": {
+      "raw": {
+        "x": 300,
+        "y": 300
+      },
+      "display": {
         "x": 300,
         "y": 300
       }
     },
     "banner": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-white-two-line-font.svg",
+        "x": 761,
+        "y": 220
+      },
+      "background": "",
       "src": "linkedin-banner-1128x191.png",
-      "dimensions": "1128 x 191 px",
-      "displays": {
+      "raw": {
+        "x": 1128,
+        "y": 191
+      },
+      "display": {
         "x": 1128,
         "y": 191
       }
     },
     "content": {
       "src": "linkedin-content-1200x627.png",
-      "dimensions": "1200 x 627 px",
-      "displays": {
+      "raw": {
+        "x": 1200,
+        "y": 627
+      },
+      "display": {
         "x": 1200,
         "y": 627
       }
@@ -31,27 +52,49 @@
     "href": "https://github.com/Crosby-Solutions",
     "name": "GitHub",
     "avatar": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-16x16.svg",
+        "x": 16,
+        "y": 16
+      },
+      "background": "",
       "src": "github-avatar-500x500.png",
-      "dimensions": "500 x 500 px",
-      "displays": {
+      "raw": {
+        "x": 500,
+        "y": 500
+      },
+      "display": {
         "x": 280,
         "y": 280
       }
     },
     "banner": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-white-two-line-font.svg",
+        "x": 761,
+        "y": 220
+      },
+      "background": "",
       "src": "github-banner-1280x640.png",
-      "dimensions": "1280 x 640 px",
-      "displays": {
+      "raw": {
+        "x": 1280,
+        "y": 640
+      },
+      "display": {
         "x": 980,
-        "y": 100
+        "y": 490
       }
     },
     "content": {
       "src": "github-banner-1280x640.png",
       "dimensions": "1280 x 640 px",
-      "displays": {
-        "x": 80,
-        "y": 80
+      "raw": {
+        "x": 1280,
+        "y": 640
+      },
+      "display": {
+        "x": 1280,
+        "y": 640
       }
     }
   },
@@ -59,25 +102,49 @@
     "href": "https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g",
     "name": "YouTube",
     "avatar": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-16x16.svg",
+        "x": 16,
+        "y": 16
+      },
+      "background": "",
       "src": "youtube-avatar-800x800.png",
-      "dimensions": "800 x 800 px",
-      "displays": {
+      "raw": {
+        "x": 800,
+        "y": 800
+      },
+      "display": {
         "x": 80,
         "y": 80
       }
     },
     "banner": {
+      "logo": {
+        "src": "~/assets/svg/cs-toplogo-white-two-line-font.svg",
+        "x": 761,
+        "y": 220
+      },
+      "background": {
+        "x": 2560,
+        "y": 1440
+      },
       "src": "youtube-banner-180x180.png",
-      "dimensions": "2048 x 1152 px",
-      "displays": {
+      "raw": {
+        "x": 1546,
+        "y": 423
+      },
+      "display": {
         "x": 1546,
         "y": 423
       }
     },
     "content": {
       "src": "youtube-content-1280x720.png",
-      "dimensions": "1280 x 720 px",
-      "displays": {
+      "raw": {
+        "x": 1280,
+        "y": 720
+      },
+      "display": {
         "x": 1280,
         "y": 720
       }
@@ -87,26 +154,48 @@
     "href": "https://www.youtube.com/channel/UCOoCc7UNktWJGiLVAYD_t6g",
     "name": "Facebook",
     "avatar": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-16x16.svg",
+        "x": 16,
+        "y": 16
+      },
+      "background": "",
       "src": "facebook-avatar-180x180.png",
-      "dimensions": "180 x 180 px",
-      "displays": {
+      "raw": {
+        "x": 180,
+        "y": 180
+      },
+      "display": {
         "x": 170,
         "y": 170
       }
     },
     "banner": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-white-two-line-font.svg",
+        "x": 761,
+        "y": 220
+      },
+      "background": "",
       "src": "facebook-avatar-820x312.png",
-      "dimensions": "820 x 312 px",
-      "displays": {
+      "raw": {
+        "x": 820,
+        "y": 312
+      },
+      "display": {
         "x": 820,
         "y": 312
       }
     },
     "content": {
       "src": "facebook-avatar-1200x630.png",
-      "dimensions": "1200 x 630 px",
-      "displays": {
-        "x": 504
+      "raw": {
+        "x": 1200,
+        "y": 630
+      },
+      "display": {
+        "x": 504,
+        "y": 265
       }
     }
   },
@@ -114,25 +203,46 @@
     "href": "https://www.instagram.com/solutionscrosby/",
     "name": "Instagram",
     "avatar": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-16x16.svg",
+        "x": 16,
+        "y": 16
+      },
+      "background": "",
       "src": "instagram-avatar-110x110.png",
-      "dimensions": "110 x 110 px",
-      "displays": {
+      "raw": {
+        "x": 110,
+        "y": 110
+      },
+      "display": {
         "x": 110,
         "y": 110
       }
     },
     "banner": {
-      "src": "instagram-photo-1080x1080.png",
-      "dimensions": "1080 x 1080 px",
-      "displays": {
+      "logo": {
+        "src": "~/assets/svg/cs-toplogo-white-two-line-font.svg",
+        "x": 481,
+        "y": 460
+      },
+      "background": "",
+      "src": "instagram-banner-1080x1080.png",
+      "raw": {
+        "x": 1080,
+        "y": 1080
+      },
+      "display": {
         "x": 510,
         "y": 510
       }
     },
     "content": {
       "src": "instagram-stories-1080x1920.png",
-      "dimensions": "1080 x 1920 px",
-      "displays": {
+      "raw": {
+        "x": 1080,
+        "y": 1920
+      },
+      "display": {
         "x": 600,
         "y": 1067
       }
@@ -142,25 +252,46 @@
     "href": "https://twitter.com/SolutionsCrosby",
     "name": "Twitter",
     "avatar": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-16x16.svg",
+        "x": 16,
+        "y": 16
+      },
+      "background": "",
       "src": "twitter-avatar-400x400.png",
-      "dimensions": "400 x 400 px",
-      "displays": {
+      "raw": {
+        "x": 400,
+        "y": 400
+      },
+      "display": {
         "x": 200,
         "y": 200
       }
     },
     "banner": {
+      "logo": {
+        "src": "~/assets/svg/cs-logo-white-two-line-font.svg",
+        "x": 761,
+        "y": 220
+      },
+      "background": "",
       "src": "twitter-banner-1500x500.png",
-      "dimensions": "1500 x 500 px",
-      "displays": {
+      "raw": {
+        "x": 1500,
+        "y": 500
+      },
+      "display": {
         "x": 1500,
         "y": 500
       }
     },
     "content": {
       "src": "twitter-content-1200x628.png",
-      "dimensions": "1200 x 628 px",
-      "displays": {
+      "raw": {
+        "x": 1200,
+        "y": 628
+      },
+      "display": {
         "x": 1200,
         "y": 628
       }

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+    <!-- viewBox="-.916 -1.05 1.832 2.1"   single hex -->
+    <!-- viewBox="-.916 -.5 3.564 1.4"  hexes -->
+    <pattern id="hexes" x="-91.6" y="-50" width="185" height="160" viewBox="-.916 -.54 3.45 2"
+        patternUnits="userSpaceOnUse" stroke="green">
+        <defs>
+            <polyline id="hex" points=" 0,-1 0.866,-0.5 0.866,0.5 0,1 -0.866,0.5 -0.866,-0.5 0,-1 0.866,-0.5 "
+                stroke-width="0.1" fill="none"></polyline>
+        </defs>
+        <use href="#hex" x="-1.725" />
+        <use href="#hex" />
+        <use href="#hex" x="1.725" />
+        <use href="#hex" x="-0.87" y="1.5" />
+        <use href="#hex" x="0.86" y="1.5" />
+        <use href="#hex" x="2.61" y="1.5" />
+    </pattern>
+    <pattern id="hexes-scaled" x="0" y="0" width="185" height="160" viexBox="0 0 185 160" patternUnits="userSpaceOnUse">
+        <rect x="0" y="0" width="370" height="320" fill="url(#hexes)" transform="scale(0.5)"></rect>
+    </pattern>
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0" style="stop-color:#fff" />
+            <stop offset=".25" style="stop-color:#000" />
+            <stop offset=".75" style="stop-color:#000" />
+            <stop offset="1" style="stop-color:#fff" />
+        </linearGradient>
+    </defs>
+
+    <mask maskUnits="userSpaceOnUse" id="fade">
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#grad)"></rect>
+    </mask>
+    <rect mask="url(#fade)" x="0" y="0" width="100%" height="100%" fill="url(#hexes-scaled)"></rect>
+</svg>
