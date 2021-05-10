@@ -1,13 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg 
-  xmlns="http://www.w3.org/2000/svg" 
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewPort="0 0 100% 35rem"
->
- <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="svg.css" type="text/css"/>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewPort="0 0 100% 35rem">
+  <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="svg.css" type="text/css" />
   <g class="section-1">
     <text class="title">On the green</text>
     <g>
@@ -15,9 +10,11 @@
       <rect width="80%" />
       <rect width="70%" />
       <rect width="90%" />
+      <rect width="90%" />
       <rect width="60%" />
       <rect width="80%" />
-      <rect width="70%" />
+      <rect width="90%" />
+      <rect width="90%" />
       <rect width="70%" />
       <rect width="60%" />
       <rect width="80%" />
@@ -27,9 +24,11 @@
       <text>TypeScript (Language)</text>
       <text>NodeJS (Language)</text>
       <text>VueJs (Framework)</text>
+      <text>NuxtJs (Framework)</text>
       <text>Strapi (CMS)</text>
       <text>D3JS (Package)</text>
       <text>SVG (Standard)</text>
+      <text>Netlify (CICD)</text>
       <text>Firebase (Cloud)</text>
       <text>AWS (Cloud)</text>
       <text>GitHub (Platform)</text>
@@ -58,4 +57,3 @@
     </g>
   </g>
 </svg>
-
