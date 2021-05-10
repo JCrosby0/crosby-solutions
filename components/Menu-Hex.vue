@@ -194,8 +194,9 @@ export default {
   animation: grow 0.2s forwards;
 }
 .hex-name {
-  font-size: 0.4em;
+  font-size: 0.55em;
   vertical-align: middle;
+  letter-spacing: -0.5px;
 }
 
 .hex-open,
@@ -206,12 +207,11 @@ export default {
 .hex-open:hover {
   color: green;
   font-weight: 600;
-  font-size: 1.1em;
 }
 .hex-selected {
   animation: 0.5s selection;
 }
-.hex-front + .hex-open:hover {
+.hex-front:hover.hex-open {
   color: red;
 }
 .modal {

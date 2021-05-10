@@ -23,7 +23,7 @@
           <Nuxt />
         </transition>
       </main>
-      <div v-show="showModal" class="modal"></div>
+      <div v-show="showModal" class="modal" @click="handleModal"></div>
     </div>
   </div>
 </template>
