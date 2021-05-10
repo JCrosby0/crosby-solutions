@@ -15,6 +15,7 @@
           :menu-options="menuOptions"
           @toggle="handleClickNav(!showMenu)"
           @clickNav="handleClickNav(false)"
+          @toggleModal="(e) => handleModal(e)"
         />
       </nav>
       <main class="flex-auto">
@@ -22,6 +23,7 @@
           <Nuxt />
         </transition>
       </main>
+      <div v-show="showModal" class="modal"></div>
     </div>
   </div>
 </template>
@@ -37,6 +39,7 @@ export default {
   data() {
     return {
       showMenu: false,
+      showModal: false,
       menuOptions: menuOptions.filter((f) => f.live),
     }
   },
@@ -53,6 +56,9 @@ export default {
     this.offset = this.$refs.nav.$el.offsetTop
   },
   methods: {
+    handleModal(e) {
+      this.showModal = !this.showModal
+    },
     handleScrollEvent(e) {
       this.handleClickNav(false)
     },
@@ -222,5 +228,15 @@ html {
 /* allow for nav bar in scrollable area */
 .scrollable {
   scroll-padding-top: 100px;
+}
+/* allow for modal overlay when opening menu */
+.modal {
+  position: absolute;
+  height: 1000vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
 }
 </style>

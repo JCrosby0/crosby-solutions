@@ -1,5 +1,5 @@
 <template>
-  <div class="hex-container relative">
+  <div class="hex-container relative" @click="(e) => $emit('clack', e)">
     <div class="mx-auto abs-center">
       <component
         :is="require('~/assets/svg/hex.svg?inline')"
@@ -7,7 +7,7 @@
         :style="{
           width: `${length * 0.866}px`,
           height: `${length}px`,
-          fill: 'white',
+          fill: fill,
         }"
       >
       </component>
@@ -38,7 +38,7 @@ export default {
     fill: {
       required: false,
       type: String,
-      default: () => 'none',
+      default: () => 'white',
     },
   },
   computed: {

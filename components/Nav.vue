@@ -12,14 +12,21 @@
       />
       <div class="click-mask absolute w-full h-full top-0 left-0"></div>
     </nuxt-link>
-    <button
+    <div class="spacer w-12 flex-auto"></div>
+    <Menu-Hex
+      :menu-options="menuOptions"
+      class="z-30"
+      @toggleModal="(e) => $emit('toggleModal', e)"
+    />
+    <!-- <button
       ref="menuButton"
       class="md:hidden nav-button p-1 border text-gray-900 border-gray-900 w-8 h-8 text-center bg-green-500 rounded"
       @click="handleMenuClick"
     >
       ☰
-    </button>
-    <div class="hidden md:inline-block links my-auto">
+    </button> -->
+    <div class="spacer w-6 flex-initial"></div>
+    <!-- <div class="hidden md:inline-block links my-auto">
       <nuxt-link
         v-for="menu in menuOptions"
         :key="menu.name"
@@ -32,14 +39,18 @@
       v-show="showMenu"
       :menu-options="menuOptions"
       :class="[showMenuAbove ? 'menu-above' : 'menu-below']"
-    ></Menu>
+    ></Menu> -->
   </div>
 </template>
 
 <script>
-import Menu from '~/components/Menu'
+// import Menu from '~/components/Menu'
+import MenuHex from '~/components/Menu-Hex'
 export default {
-  components: { Menu },
+  components: {
+    // Menu,
+    MenuHex,
+  },
   props: {
     showMenu: {
       required: true,
@@ -102,6 +113,7 @@ export default {
     opacity: 1;
   }
 }
+
 .logo {
   text-decoration: none !important;
 }
