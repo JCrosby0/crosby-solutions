@@ -48,6 +48,7 @@ export default {
     }
   },
   computed: {
+    // add extra key with space removed from title
     contentReplaced() {
       return this.content.map((n) => {
         n.replace = n.title.replace(/ /g, '')

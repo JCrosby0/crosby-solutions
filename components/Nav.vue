@@ -69,6 +69,7 @@ export default {
   },
   methods: {
     handleMenuClick(e) {
+      // handle differently if its in the top half of the screen
       const topHalf = e.y < document.body.scrollHeight / 2
       this.showMenuAbove = !topHalf
       this.$emit('toggle')

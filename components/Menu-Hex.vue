@@ -122,8 +122,10 @@ export default {
       if (!this.menuExpanded) {
         this.direction = e.y < screen.height / 2 ? 1 : -1
       }
+      // set css variables
       document.documentElement.style.setProperty('--radial-x', e.x + 'px')
       document.documentElement.style.setProperty('--radial-y', e.y + 'px')
+
       this.menuExpanded = !this.menuExpanded
       this.$emit('toggleModal', e)
 
@@ -149,6 +151,7 @@ export default {
         // clicked target should he handled differenetly to other targets
         if (hex === target) {
           target.classList.toggle('hex-selected')
+          // leave the target open for a little before closing
           setTimeout(() => {
             target.classList.toggle('hex-open')
             target.classList.toggle('hex-selected')

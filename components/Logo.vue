@@ -38,12 +38,6 @@ export default {
       logoOptions: ['color', 'monochrome', 'oneline'],
     }
   },
-
-  // mounted() {
-  //   setTimeout(() => {
-  //     this.loading = false
-  //   }, 1000)
-  // },
 }
 </script>
 <style scoped>
