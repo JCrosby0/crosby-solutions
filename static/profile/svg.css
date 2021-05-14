@@ -31,6 +31,14 @@ text:nth-of-type(9),
 rect:nth-of-type(9) { transform: translate(0, 17rem) }
 text:nth-of-type(10), 
 rect:nth-of-type(10) { transform: translate(0, 19rem) }
+text:nth-of-type(10),
+rect:nth-of-type(10) {
+  transform: translate(0, 21rem)
+}
+text:nth-of-type(10),
+rect:nth-of-type(10) {
+  transform: translate(0, 23rem)
+}
 
 
 /* section title text, below the nth spam to override it */
@@ -50,4 +58,3 @@ text.title {
 .section-1 { transform: translate(0, 1.5rem) }
 .section-2 { transform: translate(0, 24rem) }
 .section-3 { transform: translate(0, 30.5rem) }
-
