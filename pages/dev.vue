@@ -431,6 +431,13 @@
         :data="require(`~/assets/svg/cs-logo-two-line.svg`)"
         height="200px"
       />
+      <object
+        id="cs-logo-2l"
+        class="cs-logo"
+        type="image/svg+xml"
+        :data="require(`~/assets/svg/cs-toplogo-two-line-font.svg`)"
+        height="400px"
+      />
     </div>
   </div>
 </template>
