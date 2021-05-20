@@ -25,6 +25,8 @@ export default {
     return to.page < from.page ? 'page-right' : 'page-left'
   },
   async asyncData({ $content, params }) {
+    console.log('$content: ', await $content)
+    console.log('params.slug: ')
     const articles = await $content('articles').fetch()
     const document = articles[0]
     return { articles, document, params }

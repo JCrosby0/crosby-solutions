@@ -67,12 +67,12 @@ export default {
       //   rel: 'stylesheet',
       //   href: 'https://fonts.googleapis.com/css?family=Montserrat',
       // },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap',
-      },
+      // { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap',
+      // },
     ],
     meta: [
       { charset: 'utf-8' },
@@ -179,4 +179,7 @@ export default {
   //   },
   // },
   // },
+
+  // fix scrolling to anchor issues
+  // https://github.com/nuxt/nuxt.js/issues/5359
 }

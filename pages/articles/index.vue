@@ -11,7 +11,7 @@
       />
     </div>
     <div v-for="(item, i) in articles" :key="'article-' + i" class="">
-      <nuxt-link :to="`/articles/${i}?`">
+      <nuxt-link :to="`/articles/${item.slug}?`">
         <article class="article-preview py-4">
           <span class="text-2xl mt-4">{{ item.title }}</span>
           <p>{{ item.description }}</p>
@@ -34,6 +34,9 @@ export default {
       q: null,
       articles: [],
     }
+  },
+  mounted() {
+    this.fetch()
   },
   methods: {
     async fetch() {
