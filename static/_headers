@@ -4,4 +4,4 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self' crosby.solutions; style-src 'self' crosby.solutions 'unsafe-inline' fonts.googleapis.com; img-src 'self' https:; object-src 'self' crosby.solutions; child-src 'self' crosby.solutions; script-src 'self' 'unsafe-inline' https://www.google-analytics.com/; font-src 'self' data: fonts.googleapis.com fonts.gstatic.com;
+  Content-Security-Policy: default-src 'self' https://crosby.solutions https://api.vue-notion.workers.dev; style-src 'self' crosby.solutions 'unsafe-inline' fonts.googleapis.com; img-src 'self' https:; object-src 'self' crosby.solutions; child-src 'self' crosby.solutions; script-src 'self' 'unsafe-inline' https://www.google-analytics.com/; font-src 'self' data: fonts.googleapis.com fonts.gstatic.com;
