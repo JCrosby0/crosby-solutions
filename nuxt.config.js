@@ -1,6 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'ssr',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -155,6 +155,7 @@ export default {
       const files = await $content({ deep: true }).only(['slug']).fetch()
       console.log('files: ', files)
     },
+    fallback: true,
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
