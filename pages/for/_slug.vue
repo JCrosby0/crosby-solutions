@@ -1,15 +1,26 @@
 <template>
   <Container>
-    <div v-if="document.title" class="content">
+    <div v-if="clientName" class="content relative">
       <div class="intro text-3xl">
         A <span class="crosby">crosby</span
-        ><span class="solutions">solution</span> for
-        <img :src="document.logo" :alt="document.title" class="client-logo" />
-        <span v-if="document.showTitle">{{ document.title }}</span>
+        ><span class="solutions">solution</span> for:<br />
+        <img
+          v-if="clientLogo"
+          :src="clientLogo"
+          :alt="clientName + ' logo'"
+          class="client-logo"
+        />
+        <client-only placeholder="...loading">
+          <span v-show="showCompany" class="text-6xl">{{ clientName }}</span>
+        </client-only>
       </div>
-      <!-- <aside class="float-left border-gray-900 border-2 p-8 m-8">
+
+      <aside
+        class="float-left bg-green-50 border-gray-900 border-2 p-8 mt-8 mb-8 md:m-8 w-full md:w-64"
+      >
         <h2 class="text-xl">Table of Contents:</h2>
-        <ul>
+        <NotionRenderer :block-map="toc" class="toc" />
+        <!-- <ul>
           <li
             v-for="link of document.toc"
             :key="link.id"
@@ -17,12 +28,9 @@
           >
             <a class="link" @click="goto(link.id)">{{ link.text }}</a>
           </li>
-        </ul>
-      </aside> -->
-      <NotionRenderer v-if="notionRender" :block-map="blockMap" full-page />
-      <!-- <article class="pointer-events-none">
-        <nuxt-content v-if="nuxtContent" :document="document"></nuxt-content>
-      </article> -->
+        </ul> -->
+      </aside>
+      <NotionRenderer :block-map="blockMap" full-page />
       <div class="cta w-full m-auto mt-8 text-center">
         <p class="mb-10">Interested?</p>
         <div class="relative mb-20">
@@ -32,7 +40,6 @@
     </div>
     <div v-else>
       <p>Something went wrong!</p>
-      {{ document }}
     </div>
   </Container>
 </template>
@@ -48,6 +55,7 @@ function toPascalCase(text) {
 function clearAndUpper(text) {
   return text.replace(/-/, ' ').toUpperCase()
 }
+const tocHeadings = ['page', 'header', 'sub_header', 'sub_sub_header']
 
 export default {
   components: {
@@ -60,43 +68,81 @@ export default {
     }
     return to.page < from.page ? 'page-right' : 'page-left'
   },
-  async asyncData({
-    $config: { NOTION_CLIENT_BLOCK },
-    $content,
-    $notion,
-    params,
-  }) {
-    // nuxt content async
-    const document = await $content('clients', params.slug).fetch()
+  async asyncData({ $config: { NOTION_CLIENT_BLOCK }, $notion, params }) {
+    /**
+     * use Notion module to get Notion blocks from the API via a Notion pageId
+     * Query(1): retrieve client index information
+     * requested page id is index-0 of object
+     * two clients are index-1 and index-2
+     */
+    const clientsBlockMap = await $notion.getPageBlocks(NOTION_CLIENT_BLOCK)
 
-    // notion renderer async
-    // use Notion module to get Notion blocks from the API via a Notion pageId
-    const clientBlockMap = await $notion.getPageBlocks(
-      process.env.NOTION_CLIENT_BLOCK
-    )
-    // match the available clients with the params slug
-    const match = Object.entries(clientBlockMap).filter(
+    // store queried ids in an array - they are used later to isolate the desired page
+    const knownPages = [NOTION_CLIENT_BLOCK]
+
+    // match the available clients entries via title property with the params slug
+    const match = Object.entries(clientsBlockMap).find(
       (n) => n[1].value.properties?.title[0][0] === toPascalCase(params.slug)
-    )[0][1].value
-    // console.log('title: ', match.properties.title[0][0])
+    )[1].value
 
-    // identify the appropriate content
-    // const pageId = match.content[0]
-    // console.log('pageId: ', pageId)
+    // get information as required
+    const clientId = match.id
+    const clientName = match.properties.title[0][0]
+    const clientLogo = match.format.page_icon
+    // the desired page is here in match.content, but no way to identify?
 
-    // retrieve the content
-    const blockMap = await $notion.getPageBlocks(match.content)
-    // console.log('blockMap: ', blockMap)
-    return { document, params, clientBlockMap, blockMap }
+    /**
+     * Query(2) retrieve index page content for the matching client id
+     * the client page is the index page for the specific client
+     */
+    const clientBlockMap = await $notion.getPageBlocks(clientId)
+    knownPages.push(clientId)
+
+    /**
+     * filter down to entries that are of type 'page'
+     * this will return pages including those with the two ids identified previously
+     * additionally filter to remove previously seen pages
+     */
+    const proposalId = Object.entries(clientBlockMap).filter(
+      (n) => n[1].value.type === 'page' && !knownPages.includes(n[1].value.id)
+    )[0][1].value.id
+
+    /**
+     * Query(3): retrieve the proposal page content for the matched client
+     */
+
+    const blockMap = await $notion.getPageBlocks(proposalId)
+    // const blockMap = {}
+    return {
+      clientName,
+      clientLogo,
+      params,
+      blockMap,
+    }
   },
   data() {
     return {
       answer: null,
-      nuxtContent: false,
-      notionRender: true,
-      blockMap: null,
+      clientName: null,
+      blockMap: {},
       page: null,
+      showCompany: false,
     }
+  },
+  computed: {
+    toc() {
+      if (!this.blockMap) return null
+      return Object.fromEntries(
+        Object.entries(this.blockMap).filter((n) =>
+          tocHeadings.includes(n[1].value.type)
+        )
+      )
+    },
+  },
+  mounted() {
+    this.showCompany =
+      document &&
+      document.getElementsByClassName('client-logo')[0].clientWidth <= 300
   },
   methods: {
     goto(id) {
@@ -110,8 +156,10 @@ export default {
 
 <style>
 @import 'vue-notion/src/styles.css'; /* optional Notion-like styles */
+
 .toc {
-  width: 200px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   @apply mt-8;
 }
 .intro {
@@ -138,6 +186,7 @@ export default {
 img {
   width: 200px;
 }
+.notion,
 .notion-page {
   font-family: 'Montserrat', sans-serif;
 }
@@ -152,6 +201,15 @@ img {
 }
 .notion-text {
   @apply pb-4;
+}
+
+.toc .notion-h1,
+.toc .notion-h2,
+.toc .notion-h3 {
+  @apply text-base p-0 m-0 mb-4 font-normal;
+}
+.toc .notion-h3 {
+  @apply ml-8;
 }
 
 .notion-list li::marker {
