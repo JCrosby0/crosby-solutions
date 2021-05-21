@@ -1,6 +1,6 @@
 /*
   X-Frame-Options: SAMEORIGIN
-  Access-Control-Allow-Origin: https://crosby.solutions https://api.vue-notion.workers.dev/
+  Access-Control-Allow-Origin: https://api.vue-notion.workers.dev/v1/page/undefined
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
