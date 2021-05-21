@@ -7,6 +7,8 @@
       </button>
       <label for="background">Draw Background Logo: </label>
       <input v-model="drawBackground" type="checkbox" name="background" />
+      <label for="justify">Justify Right: </label>
+      <input v-model="justifyRight" type="checkbox" name="justify" />
     </div>
     <div v-for="i in items" :key="i" class="content">
       <h3 class="text-xl">Business Card - {{ i }}:</h3>
@@ -29,6 +31,7 @@ export default {
   data() {
     return {
       items: ['front', 'back'],
+      justifyRight: false,
       drawBackground: true,
       svg: {
         root: '~/assets/svg/',
@@ -46,6 +49,9 @@ export default {
   },
   watch: {
     drawBackground() {
+      this.drawAllCanvases()
+    },
+    justifyRight() {
       this.drawAllCanvases()
     },
   },
@@ -116,7 +122,8 @@ export default {
         // 1481 914 457
         imgBg.onload = () => {
           this.drawBackground &&
-            ctx.drawImage(imgBg, 0, 0, 16, 16, 1024, 0, 914, 914)
+            // ctx.drawImage(imgBg, 0, 0, 16, 16, 1024, 0, 914, 914)
+            ctx.drawImage(imgBg, 0, 0, 16, 16, 1001, 0, 914, 914)
         }
         imgBg.src = require('~/assets/svg/' + this.svg.squareNoFill)
         // draw logo
@@ -126,22 +133,32 @@ export default {
         // }
         // img.src = require('~/assets/svg/' + this.svg.squareWhite)
         // draw text
-        const leftTextAlign = 500
+        const leftTextAlign = 100
+        const rightTextAlign = 500
+        const xAlign = this.justifyRight ? rightTextAlign : leftTextAlign
         const nameTop = 500
         const line = (x) => 60 * x
-        ctx.textAlign = 'right'
+        ctx.textAlign = this.justifyRight ? 'right' : 'left'
         ctx.font = '700 64px Montserrat'
         ctx.fillStyle = '#34D399'
-        ctx.fillText('Joe Crosby', leftTextAlign, nameTop)
+        ctx.fillText('Joe Crosby', xAlign, nameTop)
         ctx.font = '400 36px Montserrat'
         ctx.fillStyle = '#FFFFFF'
-        ctx.fillText('Web Developer', leftTextAlign, nameTop + line(1))
-        ctx.fillText('joe@crosby.solutions', leftTextAlign, nameTop + line(3))
-        ctx.fillText('crosby.solutions', leftTextAlign, nameTop + line(4))
+        ctx.fillText('Web Developer', xAlign, nameTop + line(1))
+        ctx.fillText('joe@crosby.solutions', xAlign, nameTop + line(3))
+        ctx.fillText(
+          'crosby.solutions',
+          this.justifyRight ? xAlign : 230,
+          nameTop + line(4)
+        )
         ctx.fillStyle = '#808080'
-        ctx.fillText('https://', 210, nameTop + line(4))
+        ctx.fillText(
+          'https://',
+          this.justifyRight ? 210 : leftTextAlign,
+          nameTop + line(4)
+        )
         ctx.fillStyle = '#FFFFFF'
-        ctx.fillText('0412 276 729', leftTextAlign, nameTop + line(5))
+        ctx.fillText('0412 276 729', xAlign, nameTop + line(5))
       }
       // draw back card
       if (side === 'back') {
@@ -149,7 +166,8 @@ export default {
         const imgBg = new Image()
         imgBg.onload = () => {
           this.drawBackground &&
-            ctx.drawImage(imgBg, 0, 0, 16, 16, -457, 0, 914, 914)
+            // ctx.drawImage(imgBg, 0, 0, 16, 16, -457, 0, 914, 914)
+            ctx.drawImage(imgBg, 0, 0, 16, 16, -434, 0, 914, 914)
 
           // text needs to be in front of background image
           ctx.textAlign = 'center'

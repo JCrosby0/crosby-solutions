@@ -7,6 +7,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#clients
+/content/clients/
+
 # Runtime data
 pids
 *.pid

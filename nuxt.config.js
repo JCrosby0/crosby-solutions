@@ -128,6 +128,8 @@ export default {
     '@nuxtjs/svg',
     // https://google-analytics.nuxtjs.org/setup
     '@nuxtjs/google-analytics',
+    // https://github.com/janniks/vue-notion
+    'vue-notion/nuxt',
   ],
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
@@ -136,6 +138,9 @@ export default {
     googleAnalytics: {
       id: process.env.GOOGLE_ANALYTICS_ID,
     },
+  },
+  privateRuntimeConfig: {
+    NOTION_CLIENT_BLOCK: process.env.NOTION_CLIENT_BLOCK,
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
