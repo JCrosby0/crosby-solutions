@@ -3,7 +3,7 @@
     <div class="menu-container z-30">
       <nuxt-link
         v-for="(opt, i) in menuOptions"
-        :key="opt.name"
+        :key="opt.name + 'hex'"
         :to="opt.to"
         class=""
       >

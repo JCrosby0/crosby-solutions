@@ -7,7 +7,7 @@
       Email:
       <a href="mailto:contact@crosby.solutions">contact@crosby.solutions</a>
     </p>
-    <p>Phone: <a href="tel:+61 412 276 729">+61 412 CROSBY (276 729)</a></p>
+    <p>Phone: <a href="tel:+61412276729">+61 412 CROSBY (276 729)</a></p>
   </div>
 </template>
 

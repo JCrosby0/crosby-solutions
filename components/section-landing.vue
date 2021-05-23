@@ -21,10 +21,7 @@
               <li class="font-bold">Solutions</li>
             </ul>
             <p class="throwaway py-4">All the support you need to succeed.</p>
-            <p class="mission">
-              Our mission is simple: <br />We will empower you to be in control
-              of your own web presence.
-            </p>
+            <p class="mission"></p>
           </div>
           <div
             id="logo-container"
@@ -49,7 +46,7 @@
               height="140px"
             /> -->
             <p class="pt-4 text-lg text-white font-semibold">
-              Websites, Applications, Support and Development
+              Empowering you to leverage your web presence
             </p>
           </div>
         </div>

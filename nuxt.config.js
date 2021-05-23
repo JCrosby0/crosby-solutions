@@ -9,7 +9,7 @@ export default {
       lang: 'en',
     },
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/cs-favicon-80.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'apple-touch-icon-precomposed',
         href: '/favicons/favicon-152x152.png',
