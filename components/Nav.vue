@@ -3,14 +3,17 @@
     class="nav-back relative z-50 flex flex-row justify-between p-4 bg-green-200 border-b border-t border-gray-900 shadow-lg"
   >
     <nuxt-link to="/" class="logo relative">
-      <object
-        id="cs-logo-1l"
-        class="cs-logo"
-        type="image/svg+xml"
-        :data="require('~/assets/svg/cs-logo-one-line.svg')"
-        :height="30"
-      />
-      <div class="click-mask absolute w-full h-full top-0 left-0"></div>
+      <h1>
+        <object
+          id="cs-logo-1l"
+          class="cs-logo"
+          type="image/svg+xml"
+          :data="require('~/assets/svg/cs-logo-one-line.svg')"
+          :height="30"
+        />
+        <div class="click-mask absolute w-full h-full top-0 left-0"></div>
+        <span class="hidden">Menu</span>
+      </h1>
     </nuxt-link>
     <div class="spacer w-12 flex-auto"></div>
     <Menu-Hex
@@ -18,44 +21,17 @@
       class="z-30"
       @toggleModal="(e) => $emit('toggleModal', e)"
     />
-    <!-- <button
-      ref="menuButton"
-      class="md:hidden nav-button p-1 border text-gray-900 border-gray-900 w-8 h-8 text-center bg-green-500 rounded"
-      @click="handleMenuClick"
-    >
-      ☰
-    </button> -->
     <div class="spacer w-6 flex-initial"></div>
-    <!-- <div class="hidden md:inline-block links my-auto">
-      <nuxt-link
-        v-for="menu in menuOptions"
-        :key="menu.name"
-        :to="menu.to"
-        class="text-green-900 p-2 align-middle my-auto"
-        >{{ menu.name }}</nuxt-link
-      >
-    </div>
-    <Menu
-      v-show="showMenu"
-      :menu-options="menuOptions"
-      :class="[showMenuAbove ? 'menu-above' : 'menu-below']"
-    ></Menu> -->
   </div>
 </template>
 
 <script>
-// import Menu from '~/components/Menu'
 import MenuHex from '~/components/Menu-Hex'
 export default {
   components: {
-    // Menu,
     MenuHex,
   },
   props: {
-    showMenu: {
-      required: true,
-      type: Boolean,
-    },
     menuOptions: {
       required: false,
       type: Array,

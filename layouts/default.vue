@@ -4,6 +4,7 @@
       class="scrollable h-screen flex flex-col overflow-y-auto relative"
       @scroll="handleScrollEvent"
     >
+      <h1 class="hidden">Crosby Solutions</h1>
       <section v-if="$route.path === '/'">
         <Landing class="flex-initial -mb-66" />
       </section>
@@ -232,9 +233,9 @@ html {
 /* allow for modal overlay when opening menu */
 .modal {
   position: absolute;
-  height: 1000vh;
+  height: 700vh;
   width: 100%;
-  top: 0;
+  top: -100vh;
   left: 0;
   z-index: 10;
   background: rgba(0, 0, 0, 0.5);
