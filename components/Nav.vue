@@ -8,7 +8,7 @@
         class="cs-logo"
         type="image/svg+xml"
         :data="require('~/assets/svg/cs-logo-one-line.svg')"
-        height="30px"
+        :height="30"
       />
       <div class="click-mask absolute w-full h-full top-0 left-0"></div>
     </nuxt-link>
@@ -122,7 +122,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  pointer: cursor;
+  cursor: pointer;
 }
 .nav-back {
   background-image: linear-gradient(

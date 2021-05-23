@@ -13,8 +13,9 @@
               <li v-for="(li, i) in solutions" :key="'solution' + i">
                 <nuxt-link
                   :to="{ path: 'solutions', hash: li.title.replace(/ /g, '') }"
-                  >{{ li.title }}</nuxt-link
                 >
+                  {{ li.title }}
+                </nuxt-link>
               </li>
             </ul>
           </section>
@@ -30,9 +31,9 @@
             <h2 class="text-2xl mt-8">Social Media:</h2>
             <ul class="social-media text-center mx-auto md:mx-0">
               <li v-for="sm in social" :key="sm.name">
-                <a ref="noreferrer" :href="sm.href" target="_blank">{{
-                  sm.name
-                }}</a>
+                <a ref="noreferrer" :href="sm.href" target="_blank">
+                  {{ sm.name }}
+                </a>
               </li>
             </ul>
           </section>

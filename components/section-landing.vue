@@ -31,18 +31,18 @@
             class="hidden md:inline-block flex-initial right-box py-12 px-16 m-auto"
           >
             <object
-              id="cs-logo-2l"
+              id="cs-logo-2l-top"
               class="cs-logo mx-auto lg:hidden"
               type="image/svg+xml"
               :data="require(`~/assets/svg/cs-toplogo-white-two-line-font.svg`)"
-              height="280px"
+              :height="280"
             />
             <object
               id="cs-logo-2l"
               class="cs-logo mx-auto hidden lg:inline-block"
               type="image/svg+xml"
               :data="require(`~/assets/svg/cs-logo-white-two-line-font.svg`)"
-              height="140px"
+              :height="140"
             />
             <!-- <component
               :is="require('~/assets/svg/cs-logo-white-two-line.svg?inline')"

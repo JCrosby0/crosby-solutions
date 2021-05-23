@@ -24,9 +24,10 @@
       <TechStack />
       <CTA />
     </section>
-    <section class="bg-transparent">
+    <!-- multiple sections in footer -->
+    <div class="bg-transparent">
       <Footer :social="social" :solutions="solutions" />
-    </section>
+    </div>
   </div>
 </template>
 

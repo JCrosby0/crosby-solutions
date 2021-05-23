@@ -9,7 +9,6 @@ export default {
       lang: 'en',
     },
     link: [
-      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', type: 'image/x-icon', href: '/cs-favicon-80.png' },
       {
         rel: 'apple-touch-icon-precomposed',
@@ -98,14 +97,15 @@ export default {
         content: '/favicons/favicon-310x310.png',
       },
       {
-        description:
+        name: 'description',
+        content:
           'Providng quality affordable Website development, Web Apps, Web Help, Consulting, Support, Audits, in Willetton, Perth, South of Perth, Western Australia',
       },
-      { 'theme-color': '#d1fae5' },
+      { name: 'theme-color', content: '#d1fae5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' },
-      { 'http-equiv': 'X-XSS-Protection', content: '1; mode=block' },
+      // { hid: 'description', name: 'description', content: '' },
+      // { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' },
+      // { 'http-equiv': 'X-XSS-Protection', content: '1; mode=block' },
     ],
   },
 
@@ -162,29 +162,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  // CSP configuration: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-render/
-  // render: {
-  // csp: {
-  //   addMeta: true,
-  //   // hashAlgorithm: 'sha256',
-  //   policies: {
-  //     'default-src': ["'self'"],
-  //     'img-src': ["'self'", 'https:'],
-  //     // 'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
-  //     'style-src': ["'self'", "'unsafe-inline'", 'fonts.googleapis.com'],
-  //     'script-src': ["'self'", "'unsafe-inline'", '*.google-analytics.com'],
-  //     'font-src': ['fonts.gstatic.com'],
-  //     // 'connect-src': [PRIMARY_HOSTS, 'sentry.io', '*.google-analytics.com'],
-  //     // 'form-action': ["'self'"],
-  //     // 'frame-ancestors': ["'none'"],
-  //     'object-src': ["'self'"],
-  //     // 'base-uri': [PRIMARY_HOSTS],
-  //     // 'report-uri': [
-  //     //   `https://sentry.io/api/<project>/security/?sentry_key=<key>`,
-  //     // ],
-  //   },
-  // },
-  // },
 
   // fix scrolling to anchor issues
   // https://github.com/nuxt/nuxt.js/issues/5359
