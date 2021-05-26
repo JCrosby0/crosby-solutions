@@ -1,0 +1,3 @@
+[submodule "cs-content"]
+	path = cs-content
+	url = https://github.com/jcrosby0/crosby-solutions-content
