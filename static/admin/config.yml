@@ -8,10 +8,12 @@ site_url: https://crosby.solutions # for previews
 display_url: https://crosby.solutions # for linking back to the site
 logo_url: https://crosby.solutions/images/logo.svg # TODO find a static link to an image
 
+# uses pull requests to set up a draft mode kanban style board for drafts, review and publish
 publish_mode: editorial_workflow
 
+# where should content go
 media_folder: 'images/uploads' # Media files will be stored in the repo under images/uploads
-
+# check that this isn't going to mess up with content being a submodule?
 # media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
 
