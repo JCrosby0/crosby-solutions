@@ -17,7 +17,9 @@
               <li>Web app development</li>
               <li>Consultation</li>
               <li>Audits</li>
-              <li>Development</li>
+              <li>Support</li>
+              <li>Testing</li>
+              <li>Administration</li>
               <li class="font-bold">Solutions</li>
             </ul>
             <p class="throwaway py-4">All the support you need to succeed.</p>

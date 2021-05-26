@@ -99,7 +99,7 @@ export default {
       {
         name: 'description',
         content:
-          'Providng quality affordable Website development, Web Apps, Web Help, Consulting, Support, Audits, in Willetton, Perth, South of Perth, Western Australia',
+          'Providing quality affordable Website development, Web Apps, Web Help, Consulting, Support, Audits, in Willetton, Perth, South of Perth, Western Australia',
       },
       { name: 'theme-color', content: '#d1fae5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

@@ -1,5 +1,15 @@
 [
   {
+    "title": "Websites",
+    "content": "Your website is the centerpiece of your web presence. It's your elevator pitch when you're not around. It's the business card that never runs out. It's not limited by social media - only by your imagination! Crosby Solutions can help you realise your dream website.",
+    "icon": "language"
+  },
+  {
+    "title": "Web Apps",
+    "content": "Accessible from everywhere, connecting anyone and always available. The audience is endless, the opportunities are limited only by your imagination. If you've got an idea for an app, Crosby Solutions can help you develop and realise it.",
+    "icon": "apps"
+  },
+  {
     "title": "Consulting",
     "content": "We'll work with you to identify where you are, where you want to be, and plan out how to get there. This may involve further work with Crosby Solutions, with third parties, or ideally we set you up to be self-sufficient!",
     "icon": "question_answer"
@@ -18,5 +28,15 @@
     "title": "Development",
     "content": "And of course if you need a website, if you need code written, plugins configured, apps integrated, we can build that. Performant, Accessible, Responsive sites and applications to solve your problems. ",
     "icon": "polymer"
+  },
+  {
+    "title": "Testing",
+    "content": "Complex website with lots of moving parts? Discovering bugs in places you never knew they could exist? Let's get a complete, automated testing suite set up so that you'll feel comfortable knowing things are working as intended.",
+    "icon": "bug_report"
+  },
+  {
+    "title": "Administration",
+    "content": "Need help keeping your site up and running? Need security certificates, analytics, DNS configuration set up? We'd be happy to help out with all those technical bits and make sure you don't inadvertently take your site down!",
+    "icon": "manage_accounts"
   }
 ]

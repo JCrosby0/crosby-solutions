@@ -26,6 +26,7 @@
       </main>
       <div v-show="showModal" class="modal" @click="handleModal"></div>
     </div>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </div>
 </template>
 <script>
@@ -55,6 +56,15 @@ export default {
   },
   mounted() {
     this.offset = this.$refs.nav.$el.offsetTop
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', (user) => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/'
+          })
+        }
+      })
+    }
   },
   methods: {
     handleModal(e) {
@@ -79,6 +89,7 @@ export default {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
   src: local(''),
     url('~/assets/fonts/montserrat-v15-latin-300.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -88,6 +99,7 @@ export default {
   font-family: 'Montserrat';
   font-style: italic;
   font-weight: 400;
+  font-display: swap;
   src: local(''),
     url('~/assets/fonts/montserrat-v15-latin-italic.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -97,6 +109,7 @@ export default {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local(''),
     url('~/assets/fonts/montserrat-v15-latin-regular.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -107,6 +120,7 @@ export default {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
+  font-display: swap;
   src: local(''),
     url('~/assets/fonts/montserrat-v15-latin-600.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */

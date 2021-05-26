@@ -10,10 +10,11 @@
           type="image/svg+xml"
           :data="require('~/assets/svg/cs-logo-one-line.svg')"
           :height="30"
+          alt="Crosby Solutions"
         />
-        <div class="click-mask absolute w-full h-full top-0 left-0"></div>
         <span class="hidden">Menu</span>
       </h1>
+      <div class="click-mask absolute w-full h-full top-0 left-0"></div>
     </nuxt-link>
     <div class="spacer w-12 flex-auto"></div>
     <Menu-Hex
