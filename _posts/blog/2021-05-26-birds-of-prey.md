@@ -2,7 +2,7 @@
 layout: blog
 title: Birds of Prey
 date: 2021-05-26T05:27:09.866Z
-thumbnail: /images/uploads/canvas-github-banner.png
+thumbnail: http://www.birdsofpreyperth.com.au/wp-content/uploads/2018/03/Disp1.jpg
 rating: 5
 ---
 # Observations when starting a business
