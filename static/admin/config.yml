@@ -1,6 +1,12 @@
 backend:
   name: git-gateway
+  repo: crosby-solutions-content
   branch: master # Branch to update (optional; defaults to master)
+
+# CMS customisation setup
+site_url: https://crosby.solutions # for previews
+display_url: https://crosby.solutions # for linking back to the site
+logo_url: https://crosby.solutions/images/logo.svg # TODO find a static link to an image
 
 publish_mode: editorial_workflow
 
@@ -35,6 +41,8 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'json' # Used in routes, e.g., /admin/collections/blog
     label: 'JSON' # Used in the UI
+    extension: 'json'
+    format: 'json'
     folder: 'content/json' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
