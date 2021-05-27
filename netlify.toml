@@ -129,7 +129,7 @@
         font-src 'self' data: fonts.googleapis.com fonts.gstatic.com;
         img-src 'self' https:; object-src 'self' crosby.solutions; 
         child-src 'self' crosby.solutions;
-        script-src 'self' 'unsafe-inline' https://www.google-analytics.com/ https://identity.netlify.com;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://www.google-analytics.com/ https://identity.netlify.com;
         style-src 'self' crosby.solutions 'unsafe-inline' fonts.googleapis.com;'''
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
