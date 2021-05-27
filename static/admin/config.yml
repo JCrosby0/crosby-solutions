@@ -6,7 +6,7 @@ backend:
 # CMS customisation setup
 site_url: https://crosby.solutions # for previews
 display_url: https://crosby.solutions # for linking back to the site
-logo_url: https://crosby.solutions/images/logo.svg # TODO find a static link to an image
+logo_url: https://crosby.solutions/images/cs-logo_32.png # TODO find a static link to an image
 
 # uses pull requests to set up a draft mode kanban style board for drafts, review and publish
 publish_mode: editorial_workflow
