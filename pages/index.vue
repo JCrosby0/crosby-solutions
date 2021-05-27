@@ -61,8 +61,8 @@ export default {
       .fetch()
     const social = await $content('json').where({ slug: 'social' }).fetch()
     return {
-      solutions,
-      social,
+      solutions: solutions[0],
+      social: social[0],
     }
   },
   data() {
