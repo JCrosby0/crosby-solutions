@@ -108,7 +108,7 @@
   # status = 200
 
 [[headers]]
-  for = "/admin/*"
+  for = "/admin"
   [headers.values]
     Access-Control-Allow-Origin = "https://crosby.solutions"
     Content-Security-Policy = '''
