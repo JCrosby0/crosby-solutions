@@ -1,7 +1,7 @@
 <template>
   <Container>
-    <h1 class="text-3xl pb-4">Solutions</h1>
-    <Accordion :content="solutions" />
+    <h1 class="text-3xl pb-4">{{ solutions.name }}</h1>
+    <Accordion :content="solutions.content" />
     <div class="text-center mx-auto relative mt-16 mb-16">
       <CallToAction />
     </div>

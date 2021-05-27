@@ -35,49 +35,51 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - {
+          label: 'Layout',
+          name: 'layout',
+          widget: 'hidden',
+          default: 'default',
+        }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Featured Image', name: 'logo', widget: 'image' }
+      - { label: 'Client Logo', name: 'logo', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'json' # Used in routes, e.g., /admin/collections/blog
     label: 'JSON' # Used in the UI
     extension: 'json'
+    folder: 'content/json' # The path to the folder where the documents are stored
     editor-preview: 'false'
-    files: 
-    - file: 'content/json/about.json' # The path to the folder where the documents are stored
-      label: 'About'
-      name: 'about'
-      fields:
-      - { title: body, para: body, widget: code }
-  - file: 'content/json/clients.json' # The path to the folder where the documents are stored
-      label: 'Clients'
-      name: 'clients'
-      fields:
-      - { name: body, img: body, link: body, widget: code }
-  - file: 'content/json/features.json' # The path to the folder where the documents are stored
-      label: 'Features'
-      name: 'features'
-      fields:
-      - { title: body, content: body, hex-text: code }
-  - file: 'content/json/for-you-options.json' # The path to the folder where the documents are stored
-      label: 'For You Options'
-      name: 'for-you-options'
-      fields:
-      - { title: body, list: body, content: body, widget: code }
-  - file: 'content/json/social.json' # The path to the folder where the documents are stored
-      label: 'Social'
-      name: 'social'
-      fields:
-      - { href: body, name: body, avatar: body, banner: body, content: body, widget: code }
-  - file: 'content/json/solutions.json' # The path to the folder where the documents are stored
-      label: 'Solutions'
-      name: 'solutions'
-      fields:
-      - { title: body, para: body, widget: code }
-  - file: 'content/json/tech.json' # The path to the folder where the documents are stored
-      label: 'Tech'
-      name: 'tech'
-      fields:
-      - { title: body, content: body, widget: code }
+    files:
+      - file: 'about.json' # The path to the folder where the documents are stored
+        label: 'About'
+        name: 'about'
+        fields:
+          - { name: body, content: list, widget: code }
+          #title: body, para: body,
+      - file: 'clients.json' # The path to the folder where the documents are stored
+        label: 'Clients'
+        name: 'clients'
+        fields:
+          - { name: body, content: list, widget: code }
+            #img: body, link: body, widget: code }
+      - file: 'features.json' # The path to the folder where the documents are stored
+        label: 'Features'
+        name: 'features'
+        fields:
+          - { name: body, content: list, widget: code }
+      - file: 'social.json' # The path to the folder where the documents are stored
+        label: 'Social'
+        name: 'social'
+        fields:
+          - { name: body, content: list, widget: code }
+      - file: 'solutions.json' # The path to the folder where the documents are stored
+        label: 'Solutions'
+        name: 'solutions'
+        fields:
+          - { name: body, content: list, widget: code }
+      - file: 'tech.json' # The path to the folder where the documents are stored
+        label: 'Tech'
+        name: 'tech'
+        fields:
+          - { name: body, content: list, widget: code }

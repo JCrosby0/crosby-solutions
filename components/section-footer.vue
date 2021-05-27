@@ -8,13 +8,16 @@
           class="links-container md:pt-24 flex flex-wrap flex-col md:flex-row text-sm md:text-base"
         >
           <section class="section left">
-            <h2 class="text-2xl">Solutions:</h2>
+            <h2 class="text-2xl">{{ solutions.name }}:</h2>
             <ul>
-              <li v-for="(li, i) in solutions" :key="'solution' + i">
+              <li v-for="(item, i) in solutions.content" :key="'solution' + i">
                 <nuxt-link
-                  :to="{ path: 'solutions', hash: li.title.replace(/ /g, '') }"
+                  :to="{
+                    path: 'solutions',
+                    hash: item.title.replace(/ /g, ''),
+                  }"
                 >
-                  {{ li.title }}
+                  {{ item.title }}
                 </nuxt-link>
               </li>
             </ul>
@@ -30,7 +33,7 @@
             </ul>
             <h2 class="text-2xl mt-8">Social Media:</h2>
             <ul class="social-media text-center mx-auto md:mx-0">
-              <li v-for="sm in social" :key="sm.name">
+              <li v-for="sm in social.content" :key="sm.name">
                 <a ref="noreferrer" :href="sm.href" target="_blank">
                   {{ sm.name }}
                 </a>
@@ -59,11 +62,11 @@ export default {
   props: {
     social: {
       required: true,
-      type: Array,
+      type: Object,
     },
     solutions: {
       required: true,
-      type: Array,
+      type: Object,
     },
   },
 }
