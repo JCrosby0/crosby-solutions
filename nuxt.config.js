@@ -4,7 +4,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Crosby Solutions',
+    title:
+      'Crosby Solutions | Website development, Web app development, Consultation, Audits, Support, Testing, Administration',
     htmlAttrs: {
       lang: 'en',
     },
@@ -99,7 +100,7 @@ export default {
       {
         name: 'description',
         content:
-          'Providing quality affordable Website development, Web Apps, Web Help, Consulting, Support, Audits, in Willetton, Perth, South of Perth, Western Australia',
+          'Crosby Solutions: Providing quality, affordable Website development, Web Applications, Web Help, Consulting, Support, Audits, Administration in Willetton, Perth, South of Perth, Western Australia',
       },
       { name: 'theme-color', content: '#d1fae5' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
