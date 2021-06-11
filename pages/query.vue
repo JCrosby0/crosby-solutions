@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container m-auto">
     <h1>New Client Form</h1>
     <p>I can't wait to see what you've got in mind!</p>
     <p>
@@ -9,6 +9,10 @@
       have in a follow-up call. Nothing is committal, we can always make
       changes, but the more you share, the quicker we iterate towards an amazing
       product!
+    </p>
+    <p>
+      Required inputs are market in red. Additional context for the question is
+      available in the question mark circle.
     </p>
     <p>Let's get started!</p>
     <form>
@@ -22,10 +26,18 @@
           :key="'section' + s + 'input' + i"
           class="input-line"
         >
-          <label :for="input"
-            >{{ formTemplate[section][input].label }}
-            {{ formTemplate[section][input].required ? '*' : '' }}</label
-          >
+          <label :for="input" class="label">
+            <span>{{ formTemplate[section][input].label }}</span>
+            <span class="required">{{
+              formTemplate[section][input].required ? '*' : ''
+            }}</span>
+            <div
+              class="question-mark"
+              :title="formTemplate[section][input].description"
+            >
+              ?
+            </div>
+          </label>
           <textarea
             v-if="formTemplate[section][input].type == 'textarea'"
             v-model="formInputs[section][input]"
@@ -33,249 +45,41 @@
             :name="input"
             :required="formTemplate[section][input].required"
             :type="formTemplate[section][input].type"
-            :placeholder="input"
           />
+          <!-- :placeholder="input" -->
           <input
             v-else
             v-model="formInputs[section][input]"
+            :class="{
+              checkbox: formTemplate[section][input].type == 'checkbox',
+            }"
             :name="input"
             :required="formTemplate[section][input].required"
             :type="formTemplate[section][input].type"
-            :placeholder="input"
           />
+          <!-- :placeholder="input" -->
         </div>
+        <hr class="my-1" />
       </section>
+      <p>Phew, made it!</p>
+      <p>
+        Feel free to have a think before you submit the form. Were there any
+        sections you were intending to revisit? Again, nothing in here is final,
+        but it does help to have evertyhing in the one place!
+      </p>
+      <p>Looks good? Let's do it!</p>
+      <input
+        class="form-button"
+        type="submit"
+        value="Submit"
+        @click.prevent="handleSubmit()"
+      />
+      <input class="form-button" type="reset" value="Reset" />
     </form>
   </div>
 </template>
 <script>
-function createFormObject() {
-  function createSection(obj, section) {
-    obj.formTemplate.sections.push(section)
-    obj.formTemplate[section] = { inputs: [] }
-    obj.formInputs[section] = {}
-  }
-  function createInput(obj, section, key, label, description, required, type) {
-    if (!obj.formTemplate[section]) {
-      createSection(obj, section)
-    }
-    obj.formTemplate[section].inputs.push(key)
-    obj.formTemplate[section][key] = {
-      label,
-      description,
-      required,
-      type,
-    }
-    obj.formInputs[section][key] = ''
-  }
-  const obj = {
-    formTemplate: {
-      sections: [],
-    },
-    formInputs: {},
-  }
-  //   Business
-  createInput(
-    obj,
-    'business',
-    'name',
-    'Business Name',
-    'The name of your Business',
-    true,
-    'text'
-  )
-  createInput(
-    obj,
-    'business',
-    'address',
-    'Business Address',
-    'The address of your Business',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'business',
-    'phone',
-    'Phone Number',
-    'How can I call you?',
-    true,
-    'tel'
-  )
-  createInput(
-    obj,
-    'business',
-    'email',
-    'Email Address',
-    'How can I email you?',
-    true,
-    'email'
-  )
-  createInput(
-    obj,
-    'business',
-    'products',
-    'Describe your Products',
-    'Tell me about what you sell',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'services',
-    'Describe your Services',
-    'Tell me about what you do',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessModel',
-    'Explain your Business Model',
-    'Tell me how your Business works',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessStory',
-    'Explain your Business Story',
-    'Does your Business have a story to share?',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessMotivation',
-    'Explain your Business Motivation',
-    'Why do you do what you do?',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessJourney',
-    'Explain your Business Journey',
-    'Where are you at in your Journey? Where have you come from? Where are you going?',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessVision',
-    'What is your Business Vision',
-    'What does sucess look like for you?',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessMission',
-    'What is your Business Mission',
-    'What are you here to do?',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'business',
-    'businessValues',
-    'What are your Business Values',
-    'What makes you who you are?',
-    false,
-    'textarea'
-  )
-  //   Customer
-  createInput(
-    obj,
-    'customer',
-    'customerAge',
-    'What is their age?',
-    'How old are they?',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'customer',
-    'customerGender',
-    'What is their gender?',
-    'What is their gender?',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'customer',
-    'customerLocation',
-    'What is their location?',
-    'What is their location?',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'customer',
-    'customerTitle',
-    'What is their job title?',
-    'What is their job title?',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'customer',
-    'customerIndustry',
-    'What is their Industry?',
-    'What is their Industry?',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'customer',
-    'customerCompanySize',
-    'How big is their company?',
-    "How big is the customer's company?",
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'customer',
-    'customerProficiency',
-    'Are they an expert? A novice?',
-    'How proficient are they at what they do?',
-    false,
-    'text'
-  )
-  createInput(
-    obj,
-    'USP',
-    'usp',
-    'What is your Unique Selling Proposition?',
-    'What makes you different from the competition?',
-    false,
-    'textarea'
-  )
-  createInput(
-    obj,
-    'Website',
-    'upgrade',
-    'Upgrade or New Website?',
-    'Are you looking to update / upgrade an existing site or build a new one?',
-    false,
-    'text'
-  )
-  return obj
-}
+import createFormObject from '@/assets/js/createFormObject'
 
 export default {
   data() {
@@ -283,76 +87,12 @@ export default {
     return {
       formTemplate: dataobj.formTemplate,
       formInputs: dataobj.formInputs,
-      form: {
-        usp: '',
-        upgradeOrNew: '',
-        websiteUpgrade: {
-          url: '',
-          hosting: '',
-          likes: '',
-          dislikes: '',
-        },
-        websiteNew: {
-          needsDomain: '',
-          domainName: '',
-          needsHosting: '',
-        },
-        seo: {
-          optimised: '',
-          keywords: '',
-        },
-        otherSites: {
-          listOfSites: '',
-        },
-        pages: {
-          homeLanding: true,
-          aboutUs: true,
-          contactUs: true,
-          termsConditions: true,
-          products: false,
-          shipping: false,
-          pricing: false,
-          productDemo: false,
-        },
-        features: {
-          search: false,
-          forms: false,
-          maps: false,
-          portfolioGallery: false,
-          socialMediaButtons: false,
-          bookingScheduling: false,
-          loginMembership: false,
-          clickToCallButton: false,
-          onlineOrdering: false,
-          pricingTables: false,
-          liveChat: false,
-          chatBots: false,
-        },
-        underlyingGoal: '',
-        clientContent: {
-          copy: false,
-          brand: false,
-          brandBook: false,
-          logos: false,
-          colorTheme: false,
-          fonts: false,
-        },
-        timeline: {
-          fixedTimeLine: '',
-          launchDate: '',
-        },
-        budget: {},
-        maintenance: {
-          updates: '',
-          futureDevelopment: '',
-          backups: '',
-        },
-        marketing: {
-          blogging: '',
-          contentCreation: '',
-        },
-      },
     }
+  },
+  methods: {
+    handleSubmit() {
+      console.log('form: ', this.formInputs)
+    },
   },
 }
 </script>
@@ -384,5 +124,39 @@ textarea {
   flex: 1 1 auto;
   display: inline-block;
   padding: 0.5rem;
+}
+.form-button {
+  padding: 0.5rem 2rem;
+  border: 1px grey solid;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  @apply bg-gray-200 text-green-900 border-green-900 border-2;
+}
+.form-button:first-of-type {
+  @apply bg-green-500;
+}
+.checkbox {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: auto;
+}
+.required {
+  color: red;
+}
+.label {
+  position: relative;
+  padding-right: 3rem;
+}
+.question-mark {
+  border-radius: 50%;
+  border: 1px grey solid;
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  display: inline-block;
+  @apply bg-green-600 text-white;
 }
 </style>
