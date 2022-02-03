@@ -71,6 +71,7 @@ body, a, a:hover, a:visited {
   border-left: 0;
   border-right: 0;
   margin-right: auto;
+  margin-bottom: 1.5rem;
   padding-right: 3rem;
   margin-left: -3rem;
   padding-left: 3rem;
@@ -81,7 +82,6 @@ h1 {
   transform: skew(20deg);
   margin: 0.5rem;
 }
-
 a {
   line-height: 2rem;
   display: inline-block
@@ -99,7 +99,11 @@ a:hover { color: var(--color-secondary) }
 a.target {
   display: none;
 }
-
+.body-list {
+  margin-block-start: 0;
+  margin-top: 0;
+  font-size: xx-large;
+}
 .contact {
   position: absolute;
   top: 3rem;
@@ -181,7 +185,7 @@ a.target {
 
 
 .highlight {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-size: larger;
 }
 
