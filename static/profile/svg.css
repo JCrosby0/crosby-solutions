@@ -13,10 +13,10 @@ rect {
   fill: rgba(255, 192, 255, 1);
 }
 .section-2 rect {
-  fill: #rgba(255, 192, 255, 0.75);
+  fill: rgba(255, 192, 255, 0.8);
 }
 .section-3 rect {
-  fill: rgba(255, 192, 255, 0.5);
+  fill: rgba(255, 192, 255, 0.6);
 }
 
 /* this block of transforms prevents needing to situate each bar or text individually.
