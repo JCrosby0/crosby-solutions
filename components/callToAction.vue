@@ -1,5 +1,7 @@
 <template>
-  <button class="mx-auto" @click="$router.push('/contact')">Let's Talk</button>
+  <button class="mx-auto" @click="$router.push('/contact')">
+    Let's&nbsp;Talk
+  </button>
 </template>
 
 <script>

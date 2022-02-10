@@ -224,6 +224,7 @@ a.target {
   min-height: 100%;
   width: 100%;
   grid-column: 1;
+  max-height: 200%;
 }
 
 .pf-title {
@@ -242,7 +243,7 @@ a.target {
 }
 .pf-features li {
   display: inline-block;
-  border: 1px var(--color-primary-dark) solid;
+  border: 2px var(--color-primary-dark) solid;
   background: var(--color-primary-light);
   color: var(--color-primary-dark);
   font-size: 0.85rem;
@@ -250,6 +251,19 @@ a.target {
   margin: 0.2rem 0.1rem;
   border-radius: 0.3rem;
 }
+.pf-features li.highlight {
+  border: 2px green solid;
+  background: darkgreen;
+  color: white;
+  font-weight: 700;
+}
+.pf-features li.limited {
+  border: 2px red solid;
+  background: darkred;
+  color: white;
+  font-style:italic;
+  cursor: help;
+} 
 .pf-description {
   font-size: 1rem;
 }
