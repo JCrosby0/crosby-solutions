@@ -35,6 +35,7 @@
               type="image/svg+xml"
               :data="require(`~/assets/svg/cs-toplogo-white-two-line-font.svg`)"
               :height="280"
+              aria-label="crosby solutions logo"
             />
             <object
               id="cs-logo-2l"
@@ -42,6 +43,7 @@
               type="image/svg+xml"
               :data="require(`~/assets/svg/cs-logo-white-two-line-font.svg`)"
               :height="140"
+              aria-label="crosby solutions logo"
             />
             <!-- <component
               :is="require('~/assets/svg/cs-logo-white-two-line.svg?inline')"

@@ -6,6 +6,7 @@
         type="image/svg+xml"
         :data="require('~/assets/svg/cs-logo.svg')"
         height="150px"
+        aria-label="crosby solutions logo"
       />
       <h1 class="text-3xl p-4">{{ error.message }} ({{ error.statusCode }})</h1>
       <p class="p-4">Return to <NuxtLink to="/">Home page</NuxtLink></p>

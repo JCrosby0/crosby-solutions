@@ -50,6 +50,7 @@
             class="cs-logo pt-8 mx-auto"
             type="image/svg+xml"
             :data="require(`~/assets/svg/cs-logo-one-line.svg`)"
+            aria-label="crosby solutions logo"
           />
         </div>
       </section>

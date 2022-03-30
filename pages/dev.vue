@@ -416,6 +416,7 @@
         type="image/svg+xml"
         :data="require('~/assets/svg/cs-logo.svg')"
         height="200px"
+        aria-label="crosby solutions logo"
       ></object>
       <object
         id="cs-logo-1l"
@@ -423,6 +424,7 @@
         type="image/svg+xml"
         :data="require('~/assets/svg/cs-logo-one-line.svg')"
         height="100px"
+        aria-label="crosby solutions logo"
       />
       <object
         id="cs-logo-2l"
@@ -430,6 +432,7 @@
         type="image/svg+xml"
         :data="require(`~/assets/svg/cs-logo-two-line.svg`)"
         height="200px"
+        aria-label="crosby solutions logo"
       />
       <object
         id="cs-logo-2l"
@@ -437,6 +440,7 @@
         type="image/svg+xml"
         :data="require(`~/assets/svg/cs-toplogo-two-line-font.svg`)"
         height="400px"
+        aria-label="crosby solutions logo"
       />
     </div>
   </div>

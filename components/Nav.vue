@@ -10,7 +10,7 @@
           type="image/svg+xml"
           :data="require('~/assets/svg/cs-logo-one-line.svg')"
           :height="30"
-          alt="Crosby Solutions"
+          aria-label="Crosby Solutions"
         />
         <span class="hidden">Menu</span>
       </h1>
