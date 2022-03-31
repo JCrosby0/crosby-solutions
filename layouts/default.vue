@@ -26,10 +26,10 @@
       </main>
       <div v-show="showModal" class="modal" @click="handleModal"></div>
     </div>
-    <script
+    <!-- <script
       defer
       src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
+    ></script> -->
   </div>
 </template>
 <script>
