@@ -1,7 +1,8 @@
 const PRIMARY_HOSTS = `crosby.solutions`
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -173,6 +174,7 @@ export default {
   render: {
     csp: {
       hashAlgorithm: 'sha256',
+      addMeta: true,
       policies: {
         'require-trusted-types-for': ["'script'"],
         'default-src': [
