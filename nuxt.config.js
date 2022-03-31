@@ -1,8 +1,8 @@
 const PRIMARY_HOSTS = `crosby.solutions`
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  // target: 'static',
-  target: 'server',
+  target: 'static',
+  // target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -129,10 +129,10 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
-    // https://google-analytics.nuxtjs.org/setup
-    '@nuxtjs/google-analytics',
-    // https://github.com/janniks/vue-notion
-    'vue-notion/nuxt',
+    // // https://google-analytics.nuxtjs.org/setup
+    // '@nuxtjs/google-analytics',
+    // // https://github.com/janniks/vue-notion
+    // 'vue-notion/nuxt',
   ],
   // googleAnalytics: {
   //   id: process.env.GOOGLE_ANALYTICS_ID,
@@ -142,9 +142,9 @@ export default {
   //     id: process.env.GOOGLE_ANALYTICS_ID,
   //   },
   // },
-  privateRuntimeConfig: {
-    NOTION_CLIENT_BLOCK: process.env.NOTION_CLIENT_BLOCK,
-  },
+  // privateRuntimeConfig: {
+  //   NOTION_CLIENT_BLOCK: process.env.NOTION_CLIENT_BLOCK,
+  // },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
