@@ -1,3 +1,4 @@
+const PRIMARY_HOSTS = `crosby.solutions`
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -166,4 +167,58 @@ export default {
 
   // fix scrolling to anchor issues
   // https://github.com/nuxt/nuxt.js/issues/5359
+
+  // CSP
+
+  render: {
+    csp: {
+      hashAlgorithm: 'sha256',
+      policies: {
+        'require-trusted-types-for': ["'script'"],
+        'default-src': [
+          "'self'",
+          PRIMARY_HOSTS,
+          // "https://www.google-analytics.com"
+        ],
+        'font-src': [
+          "'self'",
+          'data:',
+          'fonts.googleapis.com',
+          'fonts.gstatic.com',
+        ],
+        // 'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS],
+        'img-src': [
+          "'self'",
+          'https:',
+          // '*.google-analytics.com'
+        ],
+        'object-src': ["'self", PRIMARY_HOSTS],
+        'child-src': ["'self", PRIMARY_HOSTS],
+        'script-src': [
+          "'strict-dynamic'",
+          "'self'",
+          PRIMARY_HOSTS,
+          'https://unpkg.com',
+          'https://identity.netlify.com',
+          // '*.google-analytics.com'
+        ],
+        'style-src': [
+          "'self'",
+          PRIMARY_HOSTS,
+          "'unsafe-inline'",
+          "'fonts.googleapis.com'",
+        ],
+        'connect-src': [
+          PRIMARY_HOSTS,
+          // '*.google-analytics.com'
+        ],
+        'form-action': ["'self'"],
+        'frame-ancestors': ["'none'"],
+        'base-uri': [PRIMARY_HOSTS],
+        // 'report-uri': [
+        //   `https://sentry.io/api/<project>/security/?sentry_key=<key>`
+        // ]
+      },
+    },
+  },
 }
