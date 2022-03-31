@@ -124,14 +124,14 @@
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "https://crosby.solutions"
-    Content-Security-Policy = '''
-        require-trusted-types-for 'script'
-        default-src https://crosby.solutions https://www.google-analytics.com;
+    # Content-Security-Policy = '''
+    #    require-trusted-types-for 'script'
+    #    default-src https://crosby.solutions https://www.google-analytics.com;
     #    font-src 'self' data: fonts.googleapis.com fonts.gstatic.com;
     #    img-src 'self' https:; object-src 'self' crosby.solutions; 
     #    child-src 'self' crosby.solutions;
     #    script-src 'self' https://unpkg.com https://identity.netlify.com;
-        style-src 'self' crosby.solutions https 'unsafe-inline' fonts.googleapis.com;'''
+    #    style-src 'self' crosby.solutions https 'unsafe-inline' fonts.googleapis.com;'''
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
