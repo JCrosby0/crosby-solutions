@@ -134,14 +134,14 @@ export default {
     // https://github.com/janniks/vue-notion
     'vue-notion/nuxt',
   ],
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID,
-    },
-  },
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID,
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: process.env.GOOGLE_ANALYTICS_ID,
+  //   },
+  // },
   privateRuntimeConfig: {
     NOTION_CLIENT_BLOCK: process.env.NOTION_CLIENT_BLOCK,
   },
